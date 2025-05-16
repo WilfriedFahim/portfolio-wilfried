@@ -38,7 +38,7 @@ Ce projet est ma vitrine technique : il regroupe mes premiers clones de sites we
 
 ## 🔗 Démo en ligne
 
-➡️ [https://portfolio-wilfried-chi.vercel.app](https://portfolio-wilfried-chi.vercel.app)
+![Vercel](https://vercelbadge.vercel.app/api/WilfriedFahim/portfolio-wilfried)
 
 ---
 
@@ -74,3 +74,13 @@ Je suis développeur front-end en reconversion, formé en autodidacte, et déter
 
 * 🎯 **Objectif juin 2025** : décrocher une première mission ou un poste front-end (React/Next.js)
 * 🧱 **Projet phare** : EdgeMind – un dashboard pour traders avec logique IA (ça arrive ;)
+
+---
+
+## 🧰 Scripts utiles
+
+| Commande         | Description                        |
+|------------------|------------------------------------|
+| `npm run dev`    | Lancer le serveur en développement |
+| `npm run build`  | Créer le build de production       |
+| `npm run start`  | Lancer l'app en mode production    |
