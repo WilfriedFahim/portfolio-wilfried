@@ -72,5 +72,5 @@ Ce projet est ma vitrine technique : il regroupe mes premiers clones de sites we
 
 Je suis développeur front-end en reconversion, formé en autodidacte, et déterminé à livrer des projets concrets.
 
-🎯 **Objectif mai–juin 2025** : décrocher une première mission ou un poste front-end (React/Next.js)
-🧱 **Projet phare** : EdgeMind – un dashboard pour traders avec logique IA (ça arrive ;)
+* 🎯 **Objectif juin 2025** : décrocher une première mission ou un poste front-end (React/Next.js)
+* 🧱 **Projet phare** : EdgeMind – un dashboard pour traders avec logique IA (ça arrive ;)
