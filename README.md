@@ -61,20 +61,10 @@ Ce projet est ma vitrine technique : il regroupe mes premiers clones de sites we
 
 ## 🧱 Projets en cours
 
-* ✅ **Clone Web #1** : landing page responsive (ex : Loopstudios)
-* 🔧 **Clone Web #2** : design UI plus complexe (ex : Airbnb)
+* ✅ **Clone Web #1** : Linkedin
+* 🔧 **Clone Web #2** : Airbnb
 * 📱 **Mini-App Mobile** : app React Native via Expo (v1 en ligne)
 * 🧠 **EdgeMind** : coach IA personnel pour les traders
-
----
-
-## 📆 Roadmap à venir
-
-* Ajouter section "Services pro" (offre freelance)
-* Intégrer EdgeMind (dashboard, journal, météo mentale)
-* Ajouter SEO + section "Contact"
-* Rendre tous les projets consultables et téléchargeables
-* Ajouter une section **CV PDF + pitch personnel**
 
 ---
 
@@ -83,4 +73,4 @@ Ce projet est ma vitrine technique : il regroupe mes premiers clones de sites we
 Je suis développeur front-end en reconversion, formé en autodidacte, et déterminé à livrer des projets concrets.
 
 🎯 **Objectif mai–juin 2025** : décrocher une première mission ou un poste front-end (React/Next.js)
-🧱 **Projet phare** : EdgeMind – un dashboard mental pour traders avec logique IA, scoring comportemental et mentorat interactif.
+🧱 **Projet phare** : EdgeMind – un dashboard pour traders avec logique IA (ça arrive ;)
