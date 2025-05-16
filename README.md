@@ -1,3 +1,8 @@
+![Vercel](https://vercelbadge.vercel.app/api/WilfriedFahim/portfolio-wilfried)
+
+![Aperçu](./public/images/preview.png)
+
+
 # 🌐 Portfolio – Wilfried KOUASSI
 
 Bienvenue sur mon portfolio de développeur front-end, construit avec une stack moderne utilisée en entreprise.
@@ -38,7 +43,7 @@ Ce projet est ma vitrine technique : il regroupe mes premiers clones de sites we
 
 ## 🔗 Démo en ligne
 
-![Vercel](https://vercelbadge.vercel.app/api/WilfriedFahim/portfolio-wilfried)
+[https://portfolio-wilfried-chi.vercel.app](https://portfolio-wilfried-chi.vercel.app)
 
 ---
 
