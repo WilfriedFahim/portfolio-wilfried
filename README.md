@@ -89,6 +89,7 @@ Ce projet est ma vitrine technique : il regroupe mes premiers clones de sites we
 
 - ✅ **Clone Web #1** : [Linkedin](https://github.com/WilfriedFahim/linkedin-clone)
 - 🔧 **Clone Web #2** : [Airbnb](https://github.com/WilfriedFahim/airbnb-clone)
+- **Jarvis** : siteweb qui permet au commercial, gestionnaire, manager de gerer des contrats clients
 - 📱 **Mini-App Mobile** : app React Native via Expo (v1 en ligne)
 - 🧠 **EdgeMind** : coach IA personnel pour les traders
 

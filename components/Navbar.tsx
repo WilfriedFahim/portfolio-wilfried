@@ -23,7 +23,7 @@ export default function Navbar() {
 				<li>
 					<Link
 						href="/#home"
-						className="nav-link block py-2 px-4 transition-colors duration-200"
+						className="nav-link  block py-2 px-4 transition-colors duration-200"
 					>
 						Accueil
 					</Link>
