@@ -63,24 +63,27 @@ Ce projet est ma vitrine technique : il regroupe mes premiers clones de sites we
 ├─ app/                    # Dossier principal Next.js (App Router)
 │  ├─ layout.tsx          # Layout global
 │  ├─ page.tsx            # Page d'accueil
-│  ├─ globals.css         # Styles globaux
-│  └─ favicon.ico         # Icône du site
+│  └─ globals.css         # Styles globaux
+│
+├─ components/            # Composants React réutilisables
+│  └─ Navbar.tsx         # Barre de navigation
 │
 ├─ public/                # Ressources statiques
 │  └─ images/            # Images du projet
 │
-├─ components/           # (À venir) Composants React
-├─ hooks/               # (À venir) Hooks personnalisés
-├─ types/               # (À venir) Types TypeScript
-├─ utils/               # (À venir) Fonctions utilitaires
+├─ .next/                # Dossier de build Next.js (généré)
+├─ node_modules/         # Dépendances (généré)
 │
-├─ next.config.ts       # Configuration Next.js
-├─ tailwind.config.js   # Configuration Tailwind
-├─ tsconfig.json        # Configuration TypeScript
-├─ postcss.config.mjs   # Configuration PostCSS
-├─ eslint.config.mjs    # Configuration ESLint
-│
-└─ package.json         # Dépendances et scripts
+├─ next.config.ts        # Configuration Next.js
+├─ next-env.d.ts         # Types Next.js
+├─ tailwind.config.js    # Configuration Tailwind
+├─ tsconfig.json         # Configuration TypeScript
+├─ postcss.config.mjs    # Configuration PostCSS
+├─ eslint.config.mjs     # Configuration ESLint
+├─ package.json          # Dépendances et scripts
+├─ package-lock.json     # Verrouillage des versions
+├─ .gitignore           # Fichiers ignorés par Git
+└─ LICENSE              # Licence MIT
 ```
 
 ---
