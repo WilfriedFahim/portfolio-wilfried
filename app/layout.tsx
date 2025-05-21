@@ -7,6 +7,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 // Chargement du CSS global (Tailwind + éventuelles autres règles)
 import "./globals.css";
 
+import Container from "@/components/Container"
+
 // Import de la Navbar — notre composant de navigation commun à toutes les pages
 import Navbar from "@/components/Navbar";
 
@@ -34,7 +36,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="fr">
-			{" "}
+			{""}
 			{/* Déclaration de la langue de l’app */}
 			<body
 				// Application des polices via les variables CSS + antialiasing typographique
@@ -43,8 +45,10 @@ export default function RootLayout({
 				{/* Barre de navigation partagée par toutes les pages */}
 				<Navbar />
 
-				{/* Contenu spécifique à chaque route (app/page.tsx, app/projets/page.tsx, etc.) */}
-				{children}
+				<Container>
+					{/* Contenu spécifique à chaque route (app/page.tsx, app/projets/page.tsx, etc.) */}
+					{children}
+				</Container>
 			</body>
 		</html>
 	);

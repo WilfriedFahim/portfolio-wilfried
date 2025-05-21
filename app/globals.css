@@ -19,7 +19,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #f1f5f9;
     --foreground: #ededed;
   }
 }
@@ -35,6 +35,10 @@ body {
   position: relative;
   display: inline-block;
   padding-bottom: 0.25rem;
+}
+
+.nav-link:hover {
+  color: #2563eb;
 }
 
 .nav-link::after {
