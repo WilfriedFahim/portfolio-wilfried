@@ -7,7 +7,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 // Chargement du CSS global (Tailwind + éventuelles autres règles)
 import "./globals.css";
 
-import Container from "@/components/Container"
+import Container from "@/components/Container";
 
 // Import de la Navbar — notre composant de navigation commun à toutes les pages
 import Navbar from "@/components/Navbar";

@@ -1,22 +1,17 @@
-"use client";
-
 // components/Navbar.tsx
-
-// 1. On importe le composant Link de Next.js
-//    pour naviguer sans rafraîchir la page entière.
+"use client";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
 import Container from "./Container";
 import Image from "next/image";
 
-// 2. On exporte par défaut la fonction Navbar,
-//    ce qui permet de l'importer facilement ailleurs.
 
 export default function Navbar() {
 	const [open, setOpen] = useState(false);
-	console.log("Menu open ?", open);
+	const pathname = usePathname();
 	return (
-		<nav className="fixed w-full bg-white shadow-md z-50">
+		<nav className="sticky top-0 w-full bg-white shadow-md z-50">
 			<Container className="py-0">
 				<div className="flex justify-between items-center h-16">
 					{/* logo*/}
@@ -36,42 +31,59 @@ export default function Navbar() {
 					</div>
 
 					{/* Liens desktop */}
-					<div className="hidden lg:flex space-x-8">
+					<div className="hidden lg:flex items-center space-x-4">
 						<Link
-							href="/#home"
-							className="nav-link px-3 py-2 transition-colors duration-200 hover:text-blue-600"
+							href="/"
+							className={`nav-link px-3 py-2 transition-colors duration-200 ${
+								pathname === "/"
+									? "text-blue-600 font-bold"
+									: "text-gray-700 hover:text-blue-600"
+							}`}
 						>
 							Accueil
 						</Link>
 						<Link
-							href="/#projects"
-							className="nav-link px-3 py-2 transition-colors duration-200 hover:text-blue-600"
+							href="/projects"
+							className={`nav-link px-3 py-2 transition-colors duration-200 ${
+								pathname === "/projects"
+									? "text-blue-600 font-bold"
+									: "text-gray-700 hover:text-blue-600"
+							}`}
 						>
 							Projets
 						</Link>
 						<Link
-							href="/#skills"
-							className="nav-link px-3 py-2 transition-colors duration-200 hover:text-blue-600"
+							href="/skills"
+							className={`nav-link px-3 py-2 transition-colors duration-200 ${
+								pathname === "/skills"
+									? "text-blue-600 font-bold"
+									: "text-gray-700 hover:text-blue-600"
+							}`}
 						>
 							Compétences
 						</Link>
 						<Link
-							href="/#about"
-							className="nav-link px-3 py-2 transition-colors duration-200 hover:text-blue-600"
+							href="/about"
+							className={`nav-link px-3 py-2 transition-colors duration-200 ${
+								pathname === "/about"
+									? "text-blue-600 font-bold"
+									: "text-gray-700 hover:text-blue-600"
+							}`}
 						>
 							À Propos
 						</Link>
 						<Link
-							href="/#contact"
+							href="/contact"
 							className="rounded-xl bg-blue-500 text-white px-4 py-2 transition-colors duration-200 hover:bg-blue-600"
 						>
 							Contactez-moi
 						</Link>
 					</div>
+
 					{/* Burger mobile */}
 					<button
 						id="menu-btn"
-						className="block lg:hidden focus:outline-none z-50 relative w-6 h-6 cursor-pointer"
+						className="block lg:hidden focus:outline-none z-50 relative w-6 h-6 cursor-pointer px-6"
 						aria-label="Ouvrir le menu mobile"
 						aria-expanded={open}
 						onClick={() => setOpen(!open)}
@@ -102,31 +114,47 @@ export default function Navbar() {
 			>
 				<div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
 					<Link
-						href="/#home"
-						className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50"
+						href="/"
+						className={`block px-3 py-2 rounded-md text-base font-medium ${
+							pathname === "/"
+								? "text-blue-600 font-bold"
+								: "text-gray-700 hover:text-blue-600"
+						}`}
 					>
 						Accueil
 					</Link>
 					<Link
-						href="/#projects"
-						className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50"
+						href="/projects"
+						className={`block px-3 py-2 rounded-md text-base font-medium ${
+							pathname === "/projects"
+								? "text-blue-600 font-bold"
+								: "text-gray-700 hover:text-blue-600"
+						}`}
 					>
 						Projets
 					</Link>
 					<Link
-						href="/#skills"
-						className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50"
+						href="/skills"
+						className={`block px-3 py-2 rounded-md text-base font-medium ${
+							pathname === "/skills"
+								? "text-blue-600 font-bold"
+								: "text-gray-700 hover:text-blue-600"
+						}`}
 					>
 						Compétences
 					</Link>
 					<Link
-						href="/#about"
-						className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-500 hover:bg-gray-50"
+						href="/about"
+						className={`block px-3 py-2 rounded-md text-base font-medium ${
+							pathname === "/about"
+								? "text-blue-600 font-bold"
+								: "text-gray-700 hover:text-blue-600"
+						}`}
 					>
 						À propos
 					</Link>
 					<Link
-						href="/#contact"
+						href="/contact"
 						className="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-500 hover:bg-blue-600"
 					>
 						Contactez-moi
