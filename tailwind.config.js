@@ -12,7 +12,7 @@ module.exports = {
 				secondary: "#F59E0B",
 			},
 			fontFamily: {
-				sans: ["Inter", "sans-serif"],
+				sans: ["Poppins", "Inter", "sans-serif"],
 			},
 			screens: {
 				sm: "640px",

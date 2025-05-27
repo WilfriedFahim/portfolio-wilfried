@@ -31,13 +31,13 @@ export default function Navbar() {
 					</div>
 
 					{/* Liens desktop */}
-					<div className="hidden lg:flex items-center space-x-4">
+					<div className="hidden lg:flex items-center space-x-8">
 						<Link
 							href="/"
 							className={`nav-link px-3 py-2 transition-colors duration-200 ${
 								pathname === "/"
-									? "text-blue-600 font-bold"
-									: "text-gray-700 hover:text-blue-600"
+									? "text-blue-500 font-bold"
+									: "text-gray-700 hover:text-blue-500"
 							}`}
 						>
 							Accueil
@@ -46,8 +46,8 @@ export default function Navbar() {
 							href="/projects"
 							className={`nav-link px-3 py-2 transition-colors duration-200 ${
 								pathname === "/projects"
-									? "text-blue-600 font-bold"
-									: "text-gray-700 hover:text-blue-600"
+									? "text-blue-500 font-bold"
+									: "text-gray-700 hover:text-blue-500"
 							}`}
 						>
 							Projets
@@ -56,8 +56,8 @@ export default function Navbar() {
 							href="/skills"
 							className={`nav-link px-3 py-2 transition-colors duration-200 ${
 								pathname === "/skills"
-									? "text-blue-600 font-bold"
-									: "text-gray-700 hover:text-blue-600"
+									? "text-blue-500 font-bold"
+									: "text-gray-700 hover:text-blue-500"
 							}`}
 						>
 							Compétences
@@ -66,15 +66,15 @@ export default function Navbar() {
 							href="/about"
 							className={`nav-link px-3 py-2 transition-colors duration-200 ${
 								pathname === "/about"
-									? "text-blue-600 font-bold"
-									: "text-gray-700 hover:text-blue-600"
+									? "text-blue-500 font-bold"
+									: "text-gray-700 hover:text-blue-500"
 							}`}
 						>
-							À Propos
+							À propos
 						</Link>
 						<Link
 							href="/contact"
-							className="rounded-xl bg-blue-500 text-white px-4 py-2 transition-colors duration-200 hover:bg-blue-600"
+							className="rounded-xl bg-blue-500 text-white px-4 py-2 transition-colors duration-200 hover:bg-blue-500"
 						>
 							Contactez-moi
 						</Link>
@@ -117,8 +117,8 @@ export default function Navbar() {
 						href="/"
 						className={`block px-3 py-2 rounded-md text-base font-medium ${
 							pathname === "/"
-								? "text-blue-600 font-bold"
-								: "text-gray-700 hover:text-blue-600"
+								? "text-blue-500 font-bold"
+								: "text-gray-700 hover:text-blue-500"
 						}`}
 					>
 						Accueil
@@ -127,8 +127,8 @@ export default function Navbar() {
 						href="/projects"
 						className={`block px-3 py-2 rounded-md text-base font-medium ${
 							pathname === "/projects"
-								? "text-blue-600 font-bold"
-								: "text-gray-700 hover:text-blue-600"
+								? "text-blue-500 font-bold"
+								: "text-gray-700 hover:text-blue-500"
 						}`}
 					>
 						Projets
@@ -137,8 +137,8 @@ export default function Navbar() {
 						href="/skills"
 						className={`block px-3 py-2 rounded-md text-base font-medium ${
 							pathname === "/skills"
-								? "text-blue-600 font-bold"
-								: "text-gray-700 hover:text-blue-600"
+								? "text-blue-500 font-bold"
+								: "text-gray-700 hover:text-blue-500"
 						}`}
 					>
 						Compétences
@@ -147,15 +147,15 @@ export default function Navbar() {
 						href="/about"
 						className={`block px-3 py-2 rounded-md text-base font-medium ${
 							pathname === "/about"
-								? "text-blue-600 font-bold"
-								: "text-gray-700 hover:text-blue-600"
+								? "text-blue-500 font-bold"
+								: "text-gray-700 hover:text-blue-500"
 						}`}
 					>
 						À propos
 					</Link>
 					<Link
 						href="/contact"
-						className="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-500 hover:bg-blue-600"
+						className="block px-3 py-2 rounded-md text-base font-bold text-white bg-blue-500 hover:bg-blue-500"
 					>
 						Contactez-moi
 					</Link>

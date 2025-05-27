@@ -1,26 +1,19 @@
 // Import du type Metadata de Next.js pour typer nos métadonnées
 import type { Metadata } from "next";
 
-// Import des polices Google via l’API Next.js Font
-import { Geist, Geist_Mono } from "next/font/google";
 
 // Chargement du CSS global (Tailwind + éventuelles autres règles)
 import "./globals.css";
-
 import Container from "@/components/Container";
-
-// Import de la Navbar — notre composant de navigation commun à toutes les pages
 import Navbar from "@/components/Navbar";
+import { Poppins } from "next/font/google";
 
-// Définition des variables de polices pour Geist Sans et Geist Mono
-const geistSans = Geist({
-	variable: "--font-geist-sans", // nom de la variable CSS
-	subsets: ["latin"], // jeu de caractères chargé
-});
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
+const poppins = Poppins({
+	weight:["400", "600", "700"],
 	subsets: ["latin"],
-});
+	display: "swap",
+})
+
 
 // Métadonnées globales du site (titre, description, SEO)
 export const metadata: Metadata = {
@@ -38,13 +31,9 @@ export default function RootLayout({
 		<html lang="fr">
 			{""}
 			{/* Déclaration de la langue de l’app */}
-			<body
-				// Application des polices via les variables CSS + antialiasing typographique
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
+			<body className={poppins.className}>
 				{/* Barre de navigation partagée par toutes les pages */}
 				<Navbar />
-
 				<Container>
 					{/* Contenu spécifique à chaque route (app/page.tsx, app/projets/page.tsx, etc.) */}
 					{children}
