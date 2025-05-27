@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
-import Container from "./Container";
+import Container from "@/components/Container";
 import Image from "next/image";
 
 

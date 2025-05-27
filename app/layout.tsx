@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 
 // Chargement du CSS global (Tailwind + éventuelles autres règles)
 import "./globals.css";
-import Container from "@/components/Container";
 import Navbar from "@/components/Navbar";
 import { Poppins } from "next/font/google";
 
@@ -34,10 +33,8 @@ export default function RootLayout({
 			<body className={poppins.className}>
 				{/* Barre de navigation partagée par toutes les pages */}
 				<Navbar />
-				<Container>
-					{/* Contenu spécifique à chaque route (app/page.tsx, app/projets/page.tsx, etc.) */}
-					{children}
-				</Container>
+				{/* Contenu spécifique à chaque route (app/page.tsx, app/projets/page.tsx, etc.) */}
+				{children}
 			</body>
 		</html>
 	);
