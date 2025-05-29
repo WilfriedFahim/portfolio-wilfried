@@ -1,8 +1,11 @@
+// app/page.tsx
+
 import Link from "next/link";
 import Container from "@/components/Container";
 import AnimatedAvatar from "@/components/ui/AnimatedAvatar";
 import "./globals.css";
-import { FaEye, FaPaperPlane } from "react-icons/fa"
+import { FaEye, FaPaperPlane } from "react-icons/fa";
+import Projects from "@/app/projects/page";
 
 export default function Home() {
 	return (
@@ -12,11 +15,9 @@ export default function Home() {
 					{/* zone texte*/}
 					<div className="flex-1 flex flex-col items-start text-left">
 						{/* Nom/Prénom en gros*/}
-						<h1 className="text-white text-4xl md:text-5xl font-bold mb-5">
+						<h1 className="text-white text-4xl lg:text-5xl font-bold mb-5">
 							Hello, je suis{" "}
-							<span className="text-yellow-300">
-								[Wilfried <br /> KOUASSI]
-							</span>
+							<span className="text-yellow-300">[Wilfried KOUASSI]</span>
 						</h1>
 
 						{/*Job title / rôle */}
@@ -57,10 +58,11 @@ export default function Home() {
 					</div>
 				</Container>
 			</div>
-
-			<Container>
-				<h1>Hello</h1>
-			</Container>
+			<div className="w-full py-16 px-4 bg-white" id="projects">
+				<Container>
+					<Projects />
+				</Container>
+			</div>
 		</main>
 	);
 }
