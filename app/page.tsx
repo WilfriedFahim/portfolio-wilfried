@@ -2,6 +2,7 @@ import Link from "next/link";
 import Container from "@/components/Container";
 import AnimatedAvatar from "@/components/ui/AnimatedAvatar";
 import "./globals.css";
+import { FaEye, FaPaperPlane } from "react-icons/fa"
 
 export default function Home() {
 	return (
@@ -37,12 +38,14 @@ export default function Home() {
 								href="/projects"
 								className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center"
 							>
+								<FaEye className="text-lg mr-2" />
 								Voir mes projets
 							</Link>
 							<Link
 								href="/contact"
 								className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center"
 							>
+								<FaPaperPlane className="text-lg mr-2" />
 								Me contacter
 							</Link>
 						</div>
