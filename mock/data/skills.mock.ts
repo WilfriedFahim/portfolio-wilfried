@@ -1,0 +1,106 @@
+import {
+	SiReact,
+	SiNextdotjs,
+	SiTypescript,
+	SiJavascript,
+	SiTailwindcss,
+	SiHtml5,
+	SiCss3,
+	SiRedux,
+	SiFramer,
+	SiPython,
+	SiNodedotjs,
+	SiExpress,
+	SiFirebase,
+	SiMongodb,
+	SiMysql,
+	SiPostgresql,
+	SiFastapi,
+	SiGit,
+	SiFigma,
+	SiDocker,
+	SiLinux,
+	SiPostman,
+	SiJirasoftware,
+	SiTrello,
+	SiNotion,
+} from "react-icons/si";
+import {
+	FaUserCheck,
+	FaHandsHelping,
+	FaComments,
+	FaTasks,
+	FaBrain,
+	FaBolt,
+	FaClock,
+	FaBook,
+	FaCode,
+} from "react-icons/fa";
+import { SkillType } from "@/mock/types/skill.types";
+
+export const skillsMock: SkillType[] = [
+	// FRONTEND
+	{ label: "React", group: "Frontend", icon: SiReact },
+	{ label: "Next.js", group: "Frontend", icon: SiNextdotjs },
+	{ label: "TypeScript", group: "Frontend", icon: SiTypescript },
+	{ label: "JavaScript (ES6+)", group: "Frontend", icon: SiJavascript },
+	{ label: "Tailwind CSS", group: "Frontend", icon: SiTailwindcss },
+	{ label: "HTML5", group: "Frontend", icon: SiHtml5 },
+	{ label: "CSS3", group: "Frontend", icon: SiCss3 },
+	{ label: "Redux", group: "Frontend", icon: SiRedux },
+	{ label: "Framer Motion", group: "Frontend", icon: SiFramer },
+
+	// BACKEND
+	{ label: "Python", group: "Backend", icon: SiPython },
+	{ label: "Node.js", group: "Backend", icon: SiNodedotjs },
+	{ label: "Express.js", group: "Backend", icon: SiExpress },
+	{ label: "Firebase", group: "Backend", icon: SiFirebase },
+	{ label: "MongoDB (NoSQL)", group: "Backend", icon: SiMongodb },
+	{ label: "SQL (MySQL)", group: "Backend", icon: SiMysql },
+	{ label: "SQL (PostgreSQL)", group: "Backend", icon: SiPostgresql },
+	{ label: "REST API", group: "Backend", icon: FaBolt },
+	{ label: "FAST API", group: "Backend", icon: SiFastapi },
+	{
+		label: "Authentification (JWT/OAuth)",
+		group: "Backend",
+		icon: FaUserCheck,
+	},
+
+	// DESIGN & OUTILS
+	{ label: "Git & GitHub", group: "Design & Outils", icon: SiGit },
+	{ label: "Excel (Dashboard VBA)", group: "Design & Outils", icon: FaTasks },
+	{ label: "Figma", group: "Design & Outils", icon: SiFigma },
+	{ label: "Docker (bases)", group: "Design & Outils", icon: SiDocker },
+	{
+		label: "Visual Studio Code",
+		group: "Design & Outils",
+		icon: FaCode,
+	},
+	{ label: "Linux (bases)", group: "Design & Outils", icon: SiLinux },
+	{ label: "Postman (API)", group: "Design & Outils", icon: SiPostman },
+	{
+		label: "Jira (gestion projet)",
+		group: "Design & Outils",
+		icon: SiJirasoftware,
+	},
+	{
+		label: "Trello (gestion projet)",
+		group: "Design & Outils",
+		icon: SiTrello,
+	},
+	{ label: "Notion", group: "Design & Outils", icon: SiNotion },
+
+	// SOFT SKILLS
+	{ label: "Autonomie", group: "Soft Skills", icon: FaUserCheck },
+	{ label: "Esprit d'équipe", group: "Soft Skills", icon: FaHandsHelping },
+	{ label: "Communication claire", group: "Soft Skills", icon: FaComments },
+	{ label: "Rigueur", group: "Soft Skills", icon: FaTasks },
+	{ label: "Curiosité", group: "Soft Skills", icon: FaBrain },
+	{
+		label: "Capacité d'apprentissage rapide",
+		group: "Soft Skills",
+		icon: FaBook,
+	},
+	{ label: "Organisation", group: "Soft Skills", icon: FaTasks },
+	{ label: "Gestion du temps", group: "Soft Skills", icon: FaClock },
+];

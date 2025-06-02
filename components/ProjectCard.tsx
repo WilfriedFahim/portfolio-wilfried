@@ -104,7 +104,7 @@ export function ProjectCard({
           ${i !== stats.length - 1 ? "border-r border-gray-300" : ""}
         `}
 							>
-								<div className="text-indigo-500 text-lg font-extrabold">
+								<div className="text-indigo-500 text-2xl font-extrabold">
 									{s.value}
 								</div>
 								<span className="block w-6 h-0.5 rounded-full bg-pink-400 mx-auto mt-2"></span>
