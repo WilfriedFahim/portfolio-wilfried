@@ -1,18 +1,13 @@
-// components/ProjectCard.tsx
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Image from "next/image";
-
-{
-	/* C'est du typage de base je dois lui crée un dossier spécifique, mais vu  que le projet est mineur je le laisse là */
-}
-interface ProjectProps {
-	title: string;
-	description: string;
-	stack: string[];
-	liveUrl: string;
-	githubUrl: string;
-	logo?: string;
-}
+import {
+	FaGithub,
+	FaExternalLinkAlt,
+	FaRocket,
+	FaHeart,
+	FaFlask,
+} from "react-icons/fa";
+import type { ProjectCardType } from "@/mock"; 
+import { getTechInfo } from "./ui/ColoredStack";
 
 export function ProjectCard({
 	title,
@@ -21,50 +16,120 @@ export function ProjectCard({
 	liveUrl,
 	githubUrl,
 	logo,
-}: ProjectProps) {
+	badge,
+	stats,
+}: ProjectCardType) {
 	return (
-		<div className="bg-white rounded-xl shadow-lg flex flex-col hover:-translate-y-2 hover:shadow-2xl transition duration-300">
-			{logo && (
-				<div className="w-full h40 rounded-t-xl overflow-hidden mb-4">
-					<Image
-						src={logo}
-						width={400}
-						height={160}
-						alt="Logo Projet"
-						className="w-full h-full object-cover transition duration-500 hover:scale-110"
-						priority
-					/>
+		<div className="bg-white rounded-2xl shadow-2xl flex flex-col relative overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:shadow-indigo-200 max-w-[370px] mx-auto">
+			{/* Ligne colorée en haut */}
+			<div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-400 via-fuchsia-400 to-pink-400 opacity-90 z-10" />
+
+			{/* Badge status */}
+			{badge && (
+				<div className="absolute top-4 right-4 z-20 flex flex-col gap-2">
+					<span
+						className={`
+              flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold shadow
+              ${
+								badge === "Production"
+									? "bg-green-100 text-green-700 border border-green-200"
+									: ""
+							}
+              ${
+								badge === "Perso"
+									? "bg-pink-100 text-pink-700 border border-pink-200"
+									: ""
+							}
+              ${
+								badge === "Beta"
+									? "bg-yellow-100 text-yellow-700 border border-yellow-200"
+									: ""
+							}
+            `}
+					>
+						{badge === "Production" && <FaRocket className="text-xs" />}
+						{badge === "Perso" && <FaHeart className="text-xs" />}
+						{badge === "Beta" && <FaFlask className="text-xs" />}
+						{badge}
+					</span>
 				</div>
 			)}
-			<div className="pl-6 pr-6 pb-6 flex flex-col flex-1">
-				<div className="flex gap-2 mb-3 flex-wrap">
-					{stack.map((tech: string) => (
-						<span
-							key={tech}
-							className="bg-blue-100 text-blue-600 text-xs px-3 py-1 rounded-full font-medium"
-						>
-							{tech}
-						</span>
-					))}
+
+			{/* Image projet */}
+			{logo && (
+				<div className="w-full h-[260px] overflow-hidden rounded-t-2xl relative">
+					<Image
+						src={logo}
+						alt={title}
+						width={400}
+						height={260}
+						className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
+						priority
+					/>
+					{/* Glow effet optionnel */}
+					<div className="absolute -top-12 -left-12 w-[300px] h-[300px] rounded-full bg-indigo-300 opacity-0 group-hover:opacity-20 blur-2xl transition-all duration-700"></div>
 				</div>
-				<h3 className="text-xl font-bold mb-1">{title}</h3>
-				<p className="text-gray-600 mb-4">{description}</p>
-				<div className="flex gap-3 mt-auto justify-between items-center">
+			)}
+
+			{/* Contenu */}
+			<div className="p-6 flex flex-col flex-1">
+				{/* Badges stack */}
+				<div className="flex flex-wrap gap-2 mb-2">
+					{stack.map((tech) => {
+						const { color, icon: TechIcon } = getTechInfo(tech);
+						return (
+							<span
+								key={tech}
+								className={`inline-flex items-center gap-1 px-3 py-1 rounded-full font-semibold text-xs ${color}`}
+							>
+								<TechIcon />
+								{tech}
+							</span>
+						);
+					})}
+				</div>
+				{/* Titre */}
+				<h3 className="text-xl font-bold text-gray-900 mb-1 mt-2">{title}</h3>
+				{/* Description */}
+				<p className="text-gray-600 text-sm mb-4">{description}</p>
+				{/* Stats */}
+				{stats && stats.length > 0 && (
+					<div className="flex justify-between border-t border-gray-300 pt-4 mt-4 mb-3">
+						{stats.map((s, i) => (
+							<div
+								key={i}
+								className={`
+          flex-1 text-center
+          ${i !== stats.length - 1 ? "border-r border-gray-300" : ""}
+        `}
+							>
+								<div className="text-indigo-500 text-lg font-extrabold">
+									{s.value}
+								</div>
+								<div className="text-gray-400 text-xs font-semibold">
+									{s.label}
+								</div>
+							</div>
+						))}
+					</div>
+				)}
+				{/* Boutons */}
+				<div className="flex gap-4 mt-6">
 					<a
 						href={liveUrl}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition text-xs"
+						className="action-btn bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-4 py-3 rounded-xl flex items-center gap-2 font-semibold hover:from-indigo-600 hover:to-purple-600 transition text-xs flex-1 justify-center"
 					>
-						<FaExternalLinkAlt /> Voir le projet
+						<FaGithub className="text-lg" /> Live
 					</a>
 					<a
 						href={githubUrl}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="bg-gray-200 text-gray-800 px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-gray-300 transition text-xs"
+						className="action-btn bg-gray-100 text-gray-800 px-4 py-3 rounded-xl flex items-center gap-2 font-semibold hover:bg-gray-200 transition text-xs flex-1 justify-center"
 					>
-						<FaGithub /> Code Source
+						<FaExternalLinkAlt className="text-lg" /> Code
 					</a>
 				</div>
 			</div>
