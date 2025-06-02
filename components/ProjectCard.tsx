@@ -6,7 +6,7 @@ import {
 	FaHeart,
 	FaFlask,
 } from "react-icons/fa";
-import type { ProjectCardType } from "@/mock"; 
+import type { ProjectCardType } from "@/mock";
 import { getTechInfo } from "./ui/ColoredStack";
 
 export function ProjectCard({
@@ -30,19 +30,20 @@ export function ProjectCard({
 					<span
 						className={`
               flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold shadow
+    backdrop-blur-sm bg-slate-900/30 border
               ${
 								badge === "Production"
-									? "bg-green-100 text-green-700 border border-green-200"
+									? "text-green-700 border border-green-300/30"
 									: ""
 							}
               ${
 								badge === "Perso"
-									? "bg-pink-100 text-pink-700 border border-pink-200"
+									? "text-pink-700 border border-pink-300/30"
 									: ""
 							}
               ${
 								badge === "Beta"
-									? "bg-yellow-100 text-yellow-700 border border-yellow-200"
+									? "text-yellow-700 border border-yellow-300/30"
 									: ""
 							}
             `}
@@ -106,7 +107,8 @@ export function ProjectCard({
 								<div className="text-indigo-500 text-lg font-extrabold">
 									{s.value}
 								</div>
-								<div className="text-gray-400 text-xs font-semibold">
+								<span className="block w-6 h-0.5 rounded-full bg-pink-400 mx-auto mt-2"></span>
+								<div className="text-gray-400 text-xs font-semibold mt-1">
 									{s.label}
 								</div>
 							</div>
@@ -114,7 +116,7 @@ export function ProjectCard({
 					</div>
 				)}
 				{/* Boutons */}
-				<div className="flex gap-4 mt-6">
+				<div className="flex gap-4 mt-3">
 					<a
 						href={liveUrl}
 						target="_blank"

@@ -13,9 +13,9 @@ export const projectCardsMock: ProjectCardType[] = [
 		logo: "/images/project_1.png",
 		badge: "Production",
 		stats: [
-			{ label: "Lignes", value: "15K" },
-			{ label: "Tests", value: "87%" },
-			{ label: "Note", value: "4.9" },
+			{ label: "LIGNES", value: "15K" },
+			{ label: "TESTS", value: "87%" },
+			{ label: "NOTE", value: "4.9" },
 		],
 	},
 	{
@@ -28,9 +28,9 @@ export const projectCardsMock: ProjectCardType[] = [
 		logo: "/images/project_1.png",
 		badge: "Perso",
 		stats: [
-			{ label: "Utilisateurs", value: "500+" },
-			{ label: "Démo", value: "Oui" },
-			{ label: "Tests", value: "90%" },
+			{ label: "UTILISATEURS", value: "500+" },
+			{ label: "DEMO", value: "Oui" },
+			{ label: "TESTS", value: "90%" },
 		],
 	},
 	{
@@ -44,8 +44,8 @@ export const projectCardsMock: ProjectCardType[] = [
 		badge: "Beta",
 		stats: [
 			{ label: "FPS", value: "60" },
-			{ label: "Technos", value: "WebGL" },
-			{ label: "VR Ready", value: "Oui" },
+			{ label: "TECHNOS", value: "WebGL" },
+			{ label: "VR", value: "Oui" },
 		],
 	},
 ];
