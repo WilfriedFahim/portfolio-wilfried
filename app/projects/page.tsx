@@ -8,7 +8,7 @@ export default function Projects() {
 	const projects: ProjectCardType[] = projectCardsMock;
 
 	return (
-		<div className="max-w-6xl mx-auto">
+		<div className="w-full mx-auto">
 			<h2 className="text-4xl font-bold mb-8 text-gray-800 text-center">
 				Mes Réalisations
 			</h2>

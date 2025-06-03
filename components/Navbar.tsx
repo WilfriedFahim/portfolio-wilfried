@@ -12,26 +12,22 @@ export default function Navbar() {
 	const pathname = usePathname();
 	return (
 		<nav className="sticky top-0 w-full bg-white shadow-md z-50">
-			<Container className="py-0">
+			<Container className="px-0">
 				<div className="flex justify-between items-center h-16">
 					{/* logo*/}
 					<div className="flex-shrink-0">
 						<Link href="/" className="flex items-center">
 							<Image
-								src="/images/logo.svg"
+								src="/images/logo.png"
 								alt="logo WK"
-								width={48}
-								height={48}
-								className="mr-2"
+								width={80}
+								height={80}
 							/>
-							<span className="hidden lg:inline text-xl font-bold">
-								Portfolio Builder
-							</span>
 						</Link>
 					</div>
 
 					{/* Liens desktop */}
-					<div className="hidden lg:flex items-center space-x-8">
+					<div className="hidden xl:flex items-center space-x-8">
 						<Link
 							href="/"
 							className={`nav-link px-3 py-2 transition-colors duration-200 ${
@@ -83,7 +79,7 @@ export default function Navbar() {
 					{/* Burger mobile */}
 					<button
 						id="menu-btn"
-						className="block lg:hidden focus:outline-none z-50 relative w-6 h-6 cursor-pointer px-6"
+						className="block xl:hidden focus:outline-none z-50 relative w-6 h-6 cursor-pointer px-6"
 						aria-label="Ouvrir le menu mobile"
 						aria-expanded={open}
 						onClick={() => setOpen(!open)}
@@ -110,7 +106,7 @@ export default function Navbar() {
 			{/* Menu mobile */}
 			<div
 				id="mobile-menu"
-				className={`${open ? "block" : "hidden"} lg:hidden bg-white shadow-lg`}
+				className={`${open ? "block" : "hidden"} xl:hidden bg-white shadow-lg`}
 			>
 				<div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
 					<Link

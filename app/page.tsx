@@ -11,22 +11,22 @@ export default function Home() {
 	return (
 		<main>
 			<div className="w-full bg-gradient-to-br from-blue-600 via-blue-400 to-violet-700 shadow-lg">
-				<Container className="py-10 flex flex-col lg:flex-row items-center justify-between">
+				<Container className="py-20 flex flex-col xl:flex-row items-center justify-between">
 					{/* zone texte*/}
-					<div className="flex-1 flex flex-col items-start text-left">
+					<div className="flex-1 flex flex-col items-center text-center">
 						{/* Nom/Prénom en gros*/}
-						<h1 className="text-white text-4xl lg:text-5xl font-bold mb-5">
+						<h1 className="text-white text-4xl xl:text-5xl font-bold mb-5">
 							Hello, je suis{" "}
 							<span className="text-yellow-300">[Wilfried KOUASSI]</span>
 						</h1>
 
 						{/*Job title / rôle */}
-						<p className="typewriter text-2xl lg-text-3xl font-bold mb-5 text-white">
+						<p className="typewriter text-2xl lg:text-3xl font-bold mb-5 text-white flex flex-wrap">
 							Développeur Front-end Junior
 						</p>
 
 						{/* Baseline/présentation courte */}
-						<p className="max-w-2xl text-white text-lg mb-3">
+						<p className="text-white text-base sm:text-lg xl:text-xl mb-3 leading-relaxed whitespace-normal break-words">
 							Passioné de tech, je transforme des idées en expériences web
 							interactives et élégantes. Chaque Ligne de code est une
 							opportunité de créer quelque chose d&rsquo;extraordinaire.
@@ -34,7 +34,7 @@ export default function Home() {
 						</p>
 
 						{/* Boutons d'actions */}
-						<div className="flex flex-col lg:flex-row gap-4 mt-4">
+						<div className="flex flex-col xl:flex-row gap-4 mt-4">
 							<Link
 								href="/projects"
 								className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center"
@@ -53,7 +53,7 @@ export default function Home() {
 					</div>
 
 					{/* zone image*/}
-					<div className="flex-1 flex justify-center items-center mt-8 lg:mt-0">
+					<div className="flex-1 flex justify-center items-center mt-8 xl:mt-20">
 						<AnimatedAvatar />
 					</div>
 				</Container>
