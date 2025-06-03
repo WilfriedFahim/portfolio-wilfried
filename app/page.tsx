@@ -13,28 +13,24 @@ export default function Home() {
 			<div className="w-full bg-gradient-to-br from-blue-600 via-blue-400 to-violet-700 shadow-lg">
 				<Container className="py-20 flex flex-col xl:flex-row items-center justify-between">
 					{/* zone texte*/}
-					<div className="flex-1 flex flex-col items-center text-center">
-						{/* Nom/Prénom en gros*/}
-						<h1 className="text-white text-4xl xl:text-5xl font-bold mb-5">
+					<div className="flex flex-col items-center text-center px-4 sm:px-6 md:px-8 w-full max-w-xl mx-auto">
+						<h1 className="text-white text-3xl sm:text-4xl xl:text-5xl font-bold mb-4">
 							Hello, je suis{" "}
 							<span className="text-yellow-300">[Wilfried KOUASSI]</span>
 						</h1>
 
-						{/*Job title / rôle */}
-						<p className="typewriter text-2xl lg:text-3xl font-bold mb-5 text-white flex flex-wrap">
+						<p className="typewriter block text-xl sm:text-2xl font-bold mb-4 text-white leading-relaxed">
 							Développeur Front-end Junior
 						</p>
 
-						{/* Baseline/présentation courte */}
-						<p className="text-white text-base sm:text-lg xl:text-xl mb-3 leading-relaxed whitespace-normal break-words">
+						<p className="text-white text-base sm:text-lg mb-6 leading-relaxed">
 							Passioné de tech, je transforme des idées en expériences web
-							interactives et élégantes. Chaque Ligne de code est une
-							opportunité de créer quelque chose d&rsquo;extraordinaire.
-							Curieux, exigeant et prêt à livrer des projets concrets.
+							interactives et élégantes. Chaque ligne de code est une
+							opportunité de créer quelque chose d’extraordinaire. Curieux,
+							exigeant et prêt à livrer des projets concrets.
 						</p>
 
-						{/* Boutons d'actions */}
-						<div className="flex flex-col xl:flex-row gap-4 mt-4">
+						<div className="flex flex-col sm:flex-row gap-4">
 							<Link
 								href="/projects"
 								className="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center"
