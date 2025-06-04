@@ -1,7 +1,7 @@
 // app/projects/page.tsx
 
 import { ProjectCard } from "@/components/ProjectCard";
-import { ProjectCardType, projectCardsMock } from "@/mock/index";
+import { projectCardsMock } from "@/mock/index";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -31,7 +31,7 @@ export default function Projects() {
 				href="/projects" 
 				className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:from-indigo-600 hover:to-purple-600 transition"
 				>
-					Voir tous mes projets
+					Voir tous mes projets!
 					<FaArrowRight className="ml-1" />
 				</Link>
 			</div>
