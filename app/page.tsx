@@ -12,6 +12,10 @@ export default function Home() {
 		<main>
 			<div className="w-full bg-gradient-to-br from-blue-600 via-blue-400 to-violet-700 shadow-lg">
 				<Container className="py-20 flex flex-col xl:flex-row items-center justify-between">
+					{/* zone image*/}
+					<div className="flex-1 flex justify-center items-center mb-12 xl:mb-0">
+						<AnimatedAvatar />
+					</div>
 					{/* zone texte*/}
 					<div className="flex flex-col items-center text-center px-4 sm:px-6 md:px-8 w-full max-w-xl mx-auto">
 						<h1 className="text-white text-3xl sm:text-4xl xl:text-5xl font-bold mb-4">
@@ -26,7 +30,7 @@ export default function Home() {
 						<p className="text-white text-base sm:text-lg mb-6 leading-relaxed">
 							Passioné de tech, je transforme des idées en expériences web
 							interactives et élégantes. Chaque ligne de code est une
-							opportunité de créer quelque chose d’extraordinaire. Curieux,
+							opportunité de créer quelque chose d'extraordinaire. Curieux,
 							exigeant et prêt à livrer des projets concrets.
 						</p>
 
@@ -46,11 +50,6 @@ export default function Home() {
 								Me contacter
 							</Link>
 						</div>
-					</div>
-
-					{/* zone image*/}
-					<div className="flex-1 flex justify-center items-center mt-8 xl:mt-20">
-						<AnimatedAvatar />
 					</div>
 				</Container>
 			</div>
