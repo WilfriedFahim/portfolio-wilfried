@@ -1,9 +1,10 @@
 // mock/index.ts
 
 // Types
-export * from "./types/projectCard.types";
-export * from "./types/skill.types"
+export type { ProjectCardType } from './types/projectCard.types';
+export type { SkillType } from './types/skill.types';
+export type { FormattedDateProps } from './types/FormattedDate.types'
 
 // Data 
-export * from "./data/projectCard.mock";
-export * from "./data/skills.mock"
+export { skillsMock } from './data/skills.mock';
+export { projectCardsMock } from './data/projectCard.mock';

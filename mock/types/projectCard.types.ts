@@ -6,5 +6,6 @@ export type ProjectCardType = {
 	githubUrl: string;
 	logo?: string;
 	badge?: "Production" | "Perso" | "Beta";
+	lastUpdate: Date,
 	stats?: { label: string; value: string }[];
 };

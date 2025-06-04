@@ -8,7 +8,7 @@
 
 > Développeur Front-end en reconversion | React/Next.js | TypeScript
 
-[![Aperçu](./public/images/preview.png)](https://portfolio-wilfried-chi.vercel.app)
+[![Aperçu](./public/images/projet_portfolio.jpg)](https://portfolio-wilfried-chi.vercel.app)
 
 Bienvenue sur mon portfolio de développeur front-end, construit avec une stack moderne utilisée en entreprise.
 

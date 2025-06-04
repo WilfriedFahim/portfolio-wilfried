@@ -6,8 +6,9 @@ import {
 	FaHeart,
 	FaFlask,
 } from "react-icons/fa";
+import { skillsMock } from "@/mock";
 import type { ProjectCardType } from "@/mock";
-import { getTechInfo } from "./ui/ColoredStack";
+import FormattedDate from "./ui/FormattedDate";
 
 export function ProjectCard({
 	title,
@@ -18,12 +19,16 @@ export function ProjectCard({
 	logo,
 	badge,
 	stats,
+	lastUpdate,
 }: ProjectCardType) {
+	console.log("Stack reçu:", stack);
+	console.log("SkillsMock importé:", skillsMock);
+	console.log("LastUpdate reçu:", lastUpdate);
+
 	return (
 		<div className="bg-white rounded-2xl shadow-2xl flex flex-col relative overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:shadow-indigo-200 max-w-[370px] mx-auto">
 			{/* Ligne colorée en haut */}
 			<div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-400 via-fuchsia-400 to-pink-400 opacity-90 z-10" />
-
 			{/* Badge status */}
 			{badge && (
 				<div className="absolute top-4 right-4 z-20 flex flex-col gap-2">
@@ -31,20 +36,17 @@ export function ProjectCard({
 						className={`
               flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold shadow
     backdrop-blur-sm bg-slate-900/30 border
-              ${
-								badge === "Production"
-									? "text-green-700 border border-green-300/30"
-									: ""
+              ${badge === "Production"
+								? "text-green-700 border border-green-300/30"
+								: ""
 							}
-              ${
-								badge === "Perso"
-									? "text-pink-700 border border-pink-300/30"
-									: ""
+              ${badge === "Perso"
+								? "text-pink-700 border border-pink-300/30"
+								: ""
 							}
-              ${
-								badge === "Beta"
-									? "text-yellow-700 border border-yellow-300/30"
-									: ""
+              ${badge === "Beta"
+								? "text-yellow-700 border border-yellow-300/30"
+								: ""
 							}
             `}
 					>
@@ -76,16 +78,16 @@ export function ProjectCard({
 			<div className="p-6 flex flex-col flex-1">
 				{/* Badges stack */}
 				<div className="flex flex-wrap gap-2 mb-2">
-					{stack.map((tech) => {
-						const { color, icon: TechIcon } = getTechInfo(tech);
+					{stack.map((tech, index) => {
+						const skill = skillsMock.find(s => s.label === tech);
 						return (
-							<span
-								key={tech}
-								className={`inline-flex items-center gap-1 px-3 py-1 rounded-full font-semibold text-xs ${color}`}
+							<div
+								key={index}
+								className={`inline-flex items-center gap-1 px-3 py-1 rounded-full font-semibold text-xs ${skill?.color || 'bg-indigo-100 text-indigo-700'}`}
 							>
-								<TechIcon />
-								{tech}
-							</span>
+								{skill?.icon && <skill.icon className="text-current" size={16} />}
+								<span>{tech}</span>
+							</div>
 						);
 					})}
 				</div>
@@ -93,6 +95,13 @@ export function ProjectCard({
 				<h3 className="text-xl font-bold text-gray-900 mb-1 mt-2">{title}</h3>
 				{/* Description */}
 				<p className="text-gray-600 text-sm mb-4">{description}</p>
+				{/* Date de mise à jour */}
+				{lastUpdate && (
+					<div className="text-right text-xs text-gray-400 italic pr-2">
+						Dernière maj&nbsp; :{" "}
+						<FormattedDate date={lastUpdate} format="fr" />
+					</div>
+				)}
 				{/* Stats */}
 				{stats && stats.length > 0 && (
 					<div className="flex justify-between border-t border-gray-300 pt-4 mt-4 mb-3">
@@ -100,9 +109,9 @@ export function ProjectCard({
 							<div
 								key={i}
 								className={`
-          flex-1 text-center
-          ${i !== stats.length - 1 ? "border-r border-gray-300" : ""}
-        `}
+          							flex-1 text-center
+          							${i !== stats.length - 1 ? "border-r border-gray-300" : ""}
+        						`}
 							>
 								<div className="text-indigo-500 text-2xl font-extrabold">
 									{s.value}

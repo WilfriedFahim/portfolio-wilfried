@@ -30,7 +30,7 @@ export default function Home() {
 						<p className="text-white text-base sm:text-lg mb-6 leading-relaxed">
 							Passioné de tech, je transforme des idées en expériences web
 							interactives et élégantes. Chaque ligne de code est une
-							opportunité de créer quelque chose d'extraordinaire. Curieux,
+							opportunité de créer quelque chose d&apos;extraordinaire. Curieux,
 							exigeant et prêt à livrer des projets concrets.
 						</p>
 

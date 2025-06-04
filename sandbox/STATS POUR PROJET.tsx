@@ -1,0 +1,22 @@
+stats: [
+    { label: "LIGNES", value: "15K", desc: "Nombre total de lignes de code du projet" },
+    { label: "COMMITS", value: "132", desc: "Nombre de commits Git sur le projet" },
+    { label: "TESTS", value: "87%", desc: "Pourcentage de code testé ou nombre de tests automatisés" },
+    { label: "NOTE", value: "4.9", desc: "Note de satisfaction ou auto-évaluation du projet" },
+    { label: "UTILISATEURS", value: "5+", desc: "Nombre d’utilisateurs ou testeurs" },
+    { label: "JOURS DE DEV", value: "22j", desc: "Temps total de développement (jours/h)" },
+    { label: "CONTRIBUTEURS", value: "1", desc: "Nombre de contributeurs sur le projet" },
+    { label: "MIS À JOUR", value: "06/2025", desc: "Date de dernière mise à jour/activité" },
+    { label: "STACK", value: "React, Next.js, TypeScript", desc: "Principales technologies utilisées" },
+    { label: "LIBRAIRIES", value: "12", desc: "Nombre de librairies/outils utilisés dans le projet" },
+    { label: "DÉPLOIEMENTS", value: "10", desc: "Nombre de déploiements sur un serveur ou plateforme" },
+    { label: "VERSIONS", value: "v2.3", desc: "Numéro de version ou nombre de releases" },
+    { label: "DERNIER COMMIT", value: "2025-06-05", desc: "Date du dernier commit (activité récente)" },
+    { label: "SCORE PERF", value: "98/100", desc: "Score de performance Lighthouse ou autre outil" },
+    { label: "COUVERTURE CI/CD", value: "Oui", desc: "Projet avec intégration/déploiement continu" },
+    { label: "VISITES", value: "150+", desc: "Nombre de visites ou vues uniques du projet" },
+    { label: "FEATURES", value: "7", desc: "Nombre de fonctionnalités principales" },
+    { label: "BUGS CORRIGÉS", value: "23", desc: "Nombre de bugs/patchs réalisés durant le projet" },
+    { label: "PRODUCTION", value: "Oui", desc: "Projet déployé en production ?" },
+    { label: "DOCS", value: "✔️", desc: "Documentation technique/projet rédigée" }
+]
