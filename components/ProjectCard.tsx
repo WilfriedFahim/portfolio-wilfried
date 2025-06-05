@@ -37,17 +37,17 @@ export function ProjectCard({
               				flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold shadow
     							backdrop-blur-sm bg-slate-900/30 border
               						${badge === "Production"
-										? "text-green-700 border border-green-300/30"
-										: ""
-									}
+								? "text-green-700 border border-green-300/30"
+								: ""
+							}
               						${badge === "Perso"
-										? "text-pink-700 border border-pink-300/30"
-										: ""
-									}
+								? "text-pink-700 border border-pink-300/30"
+								: ""
+							}
               						${badge === "Beta"
-										? "text-yellow-700 border border-yellow-300/30"
-										: ""
-									}
+								? "text-yellow-700 border border-yellow-300/30"
+								: ""
+							}
             				`}
 					>
 						{badge === "Production" && <FaRocket className="text-xs" />}
@@ -97,7 +97,7 @@ export function ProjectCard({
 					<h3 className="text-xl font-bold text-gray-900 mb-1 mt-2">{title}</h3>
 
 					{/* Description */}
-					<ProjectDescription description={description}/>
+					<ProjectDescription description={description} />
 				</div>
 
 				{/* Date de mise à jour */}
@@ -107,7 +107,7 @@ export function ProjectCard({
 						<FormattedDate date={lastUpdate} format="fr" />
 					</div>
 				)}
-				
+
 				{/* Stats */}
 				{stats && stats.length > 0 && (
 					<div className="flex justify-between border-t border-gray-300 pt-4 mt-4 mb-3">
@@ -132,22 +132,42 @@ export function ProjectCard({
 				)}
 
 				{/* Boutons */}
-				<div className="flex gap-4 mt-1 border-t border-gray-300">
+				<div className="flex gap-4 mt-3">
 					<a
-						href={liveUrl}
+						href={githubUrl || "#"}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="action-btn bg-gradient-to-r from-indigo-500 to-purple-500 text-white mt-6 px-4 py-3 rounded-xl flex items-center gap-2 font-semibold hover:from-indigo-600 hover:to-purple-600 transition text-xs flex-1 justify-center"
+						className={`action-btn flex-1 flex items-center gap-2 justify-center px-4 py-3 rounded-xl font-semibold text-xs
+						transition-all duration-200 shadow-md
+						${githubUrl
+								? "bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-indigo-600 hover:to-purple-600 hover:scale-105"
+								: "bg-gray-200 text-gray-400 cursor-not-allowed pointer-events-none"
+							}
+    `}
+						tabIndex={githubUrl ? 0 : -1}
+						aria-disabled={!githubUrl}
+						title={githubUrl ? "Voir le projet en ligne" : "Lien live non disponible"}
 					>
-						<FaGithub className="text-lg" /> Live
+						<FaGithub className="text-lg" />
+						Code
 					</a>
 					<a
-						href={githubUrl}
+						href={liveUrl || "#"}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="action-btn bg-gray-200 text-gray-800 mt-6 px-4 py-3 rounded-xl flex items-center gap-2 font-semibold hover:bg-gray-200 transition text-xs flex-1 justify-center"
+						className={`action-btn flex-1 flex items-center gap-2 justify-center px-4 py-3 rounded-xl font-semibold text-xs
+      transition-all duration-200 shadow-md
+							${liveUrl
+								? "bg-gray-200 text-gray-800 hover:bg-gray-300 hover:scale-105"
+								: "bg-gray-200 text-gray-400 cursor-not-allowed pointer-events-none"
+							}
+    `}
+						tabIndex={liveUrl ? 0 : -1}
+						aria-disabled={!liveUrl}
+						title={liveUrl ? "Voir le code sur GitHub" : "Code source non disponible"}
 					>
-						<FaExternalLinkAlt className="text-lg" /> Code
+						<FaExternalLinkAlt className="text-lg" />
+						Live
 					</a>
 				</div>
 			</div>
