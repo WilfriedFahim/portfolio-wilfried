@@ -1,3 +1,5 @@
+// component/ProjectCard.tsx
+
 import Image from "next/image";
 import {
 	FaGithub,
@@ -9,6 +11,7 @@ import {
 import { skillsMock } from "@/mock";
 import type { ProjectCardType } from "@/mock";
 import FormattedDate from "./ui/FormattedDate";
+import { ProjectDescription } from "./ui/ProjectDescription";
 
 export function ProjectCard({
 	title,
@@ -21,9 +24,6 @@ export function ProjectCard({
 	stats,
 	lastUpdate,
 }: ProjectCardType) {
-	console.log("Stack reçu:", stack);
-	console.log("SkillsMock importé:", skillsMock);
-	console.log("LastUpdate reçu:", lastUpdate);
 
 	return (
 		<div className="bg-white rounded-2xl shadow-2xl flex flex-col relative overflow-hidden group transition-all duration-300 hover:-translate-y-2 hover:shadow-indigo-200 max-w-[370px] mx-auto">
@@ -34,21 +34,21 @@ export function ProjectCard({
 				<div className="absolute top-4 right-4 z-20 flex flex-col gap-2">
 					<span
 						className={`
-              flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold shadow
-    backdrop-blur-sm bg-slate-900/30 border
-              ${badge === "Production"
-								? "text-green-700 border border-green-300/30"
-								: ""
-							}
-              ${badge === "Perso"
-								? "text-pink-700 border border-pink-300/30"
-								: ""
-							}
-              ${badge === "Beta"
-								? "text-yellow-700 border border-yellow-300/30"
-								: ""
-							}
-            `}
+              				flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold shadow
+    							backdrop-blur-sm bg-slate-900/30 border
+              						${badge === "Production"
+										? "text-green-700 border border-green-300/30"
+										: ""
+									}
+              						${badge === "Perso"
+										? "text-pink-700 border border-pink-300/30"
+										: ""
+									}
+              						${badge === "Beta"
+										? "text-yellow-700 border border-yellow-300/30"
+										: ""
+									}
+            				`}
 					>
 						{badge === "Production" && <FaRocket className="text-xs" />}
 						{badge === "Perso" && <FaHeart className="text-xs" />}
@@ -69,13 +69,13 @@ export function ProjectCard({
 						className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
 						priority
 					/>
-					{/* Glow effet optionnel */}
+					{/* Glow effet */}
 					<div className="absolute -top-12 -left-12 w-[300px] h-[300px] rounded-full bg-indigo-300 opacity-0 group-hover:opacity-20 blur-2xl transition-all duration-700"></div>
 				</div>
 			)}
 
 			{/* Contenu */}
-			<div className="p-6 flex flex-col flex-1">
+			<div className="p-6 flex flex-col flex-1  bg-gray-100">
 				{/* Badges stack */}
 				<div className="flex flex-wrap gap-2 mb-2">
 					{stack.map((tech, index) => {
@@ -91,10 +91,15 @@ export function ProjectCard({
 						);
 					})}
 				</div>
-				{/* Titre */}
-				<h3 className="text-xl font-bold text-gray-900 mb-1 mt-2">{title}</h3>
-				{/* Description */}
-				<p className="text-gray-600 text-sm mb-4">{description}</p>
+
+				<div className="flex-1 flex flex-col justify-start border-t border-gray-300 mt-3">
+					{/* Titre */}
+					<h3 className="text-xl font-bold text-gray-900 mb-1 mt-2">{title}</h3>
+
+					{/* Description */}
+					<ProjectDescription description={description}/>
+				</div>
+
 				{/* Date de mise à jour */}
 				{lastUpdate && (
 					<div className="text-right text-xs text-gray-400 italic pr-2">
@@ -102,6 +107,7 @@ export function ProjectCard({
 						<FormattedDate date={lastUpdate} format="fr" />
 					</div>
 				)}
+				
 				{/* Stats */}
 				{stats && stats.length > 0 && (
 					<div className="flex justify-between border-t border-gray-300 pt-4 mt-4 mb-3">
@@ -116,7 +122,7 @@ export function ProjectCard({
 								<div className="text-indigo-500 text-2xl font-extrabold">
 									{s.value}
 								</div>
-								<span className="block w-6 h-0.5 rounded-full bg-pink-400 mx-auto mt-2"></span>
+								<span className="block w-6 h-0.5 rounded-full bg-pink-400 mx-auto mt-2 mb-2"></span>
 								<div className="text-gray-400 text-xs font-semibold mt-1">
 									{s.label}
 								</div>
@@ -124,13 +130,14 @@ export function ProjectCard({
 						))}
 					</div>
 				)}
+
 				{/* Boutons */}
-				<div className="flex gap-4 mt-3">
+				<div className="flex gap-4 mt-1 border-t border-gray-300">
 					<a
 						href={liveUrl}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="action-btn bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-4 py-3 rounded-xl flex items-center gap-2 font-semibold hover:from-indigo-600 hover:to-purple-600 transition text-xs flex-1 justify-center"
+						className="action-btn bg-gradient-to-r from-indigo-500 to-purple-500 text-white mt-6 px-4 py-3 rounded-xl flex items-center gap-2 font-semibold hover:from-indigo-600 hover:to-purple-600 transition text-xs flex-1 justify-center"
 					>
 						<FaGithub className="text-lg" /> Live
 					</a>
@@ -138,7 +145,7 @@ export function ProjectCard({
 						href={githubUrl}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="action-btn bg-gray-100 text-gray-800 px-4 py-3 rounded-xl flex items-center gap-2 font-semibold hover:bg-gray-200 transition text-xs flex-1 justify-center"
+						className="action-btn bg-gray-200 text-gray-800 mt-6 px-4 py-3 rounded-xl flex items-center gap-2 font-semibold hover:bg-gray-200 transition text-xs flex-1 justify-center"
 					>
 						<FaExternalLinkAlt className="text-lg" /> Code
 					</a>

@@ -20,10 +20,10 @@ export const projectCardsMock: ProjectCardType[] = [
 		],
 	},
 	{
-		title: "Mon Portfolio de Builder ",
+		title: "Edgemind",
 		description:
-			"C'est ma vitrine technique : il regroupe mes premiers clones de sites web, une mini-app mobile, mon SaaS personnel EdgeMind et bien d'autres.",
-		stack: ["React", "Next.js", "TypeScript", "JavaScript (ES6+)", "CSS3", "Tailwind CSS"],
+			"EdgeMind est une plateforme SaaS innovante de coaching mental IA destinée aux traders. Notre solution analyse votre comportement de trading, détecte les erreurs mentales, et vous guide avec un mentor IA personnalisé pour améliorer vos performances.",
+		stack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "Python", "FAST API"],
 		liveUrl: "https://portfolio-wilfried-chi.vercel.app/",
 		githubUrl: "https://github.com/WilfriedFahim/portfolio-wilfried",
 		logo: "/images/projet_portfolio.jpg",
@@ -37,9 +37,8 @@ export const projectCardsMock: ProjectCardType[] = [
 	},
 	{
 		title: "LinkedIn Clone",
-		description:
-			"Une application complète avec authentification, base de données et interface intuitive construite avec React et Firebase.",
-		stack: ["Next.js", "React", "Tailwind CSS"],
+		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at erat eu sapien egestas tincidunt. In hac habitasse platea dictumst. Pellentesque.",
+		stack: ["Next.js", "React", "Tailwind CSS", "JavaScript (ES6+)", "JavaScript (ES6+)", "JavaScript (ES6+)"],
 		liveUrl: "https://github.com/WilfriedFahim/linkedin-clone",
 		githubUrl: "https://github.com/WilfriedFahim/linkedin-clone",
 		logo: "/images/project_1.png",
@@ -55,7 +54,7 @@ export const projectCardsMock: ProjectCardType[] = [
 		title: "Galaxy Explorer",
 		description:
 			"Expérience immersive 3D explorant notre système solaire avec rendu réaliste. base de données et interface intuitive construite avec React et Firebase.",
-		stack: ["React", "Three.js", "Next.js"],
+		stack: ["React", "Three.js", "Next.js", "JavaScript (ES6+)", "JavaScript (ES6+)", "JavaScript (ES6+)"],
 		liveUrl: "https://github.com/WilfriedFahim/linkedin-clone",
 		githubUrl: "https://github.com/WilfriedFahim/linkedin-clone",
 		logo: "/images/project_1.png",
