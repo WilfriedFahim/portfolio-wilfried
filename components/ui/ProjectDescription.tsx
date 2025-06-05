@@ -1,8 +1,7 @@
-// component/ui/ProjectDescription.tsx
+/// component/ui/ProjectDescription.tsx
 
 "use client";
 
-import { transform } from "next/dist/build/swc/generated-native";
 import React, { useRef, useEffect, useState } from "react";
 
 export function ProjectDescription({ description }: { description: string }) {
