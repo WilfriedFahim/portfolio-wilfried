@@ -137,8 +137,7 @@ export function ProjectCard({
 						href={githubUrl || "#"}
 						target="_blank"
 						rel="noopener noreferrer"
-						className={`action-btn flex-1 flex items-center gap-2 justify-center px-4 py-3 rounded-xl font-semibold text-xs
-						transition-all duration-200 shadow-md
+						className={`action-btn flex-1 flex items-center gap-2 justify-center px-4 py-3 rounded-xl font-semibold text-xs transition-all duration-200 shadow-md
 						${githubUrl
 								? "bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-indigo-600 hover:to-purple-600 hover:scale-105"
 								: "bg-gray-200 text-gray-400 cursor-not-allowed pointer-events-none"
@@ -155,8 +154,7 @@ export function ProjectCard({
 						href={liveUrl || "#"}
 						target="_blank"
 						rel="noopener noreferrer"
-						className={`action-btn flex-1 flex items-center gap-2 justify-center px-4 py-3 rounded-xl font-semibold text-xs
-      transition-all duration-200 shadow-md
+						className={`action-btn flex-1 flex items-center gap-2 justify-center px-4 py-3 rounded-xl font-semibold text-xs transition-all duration-200 shadow-md
 							${liveUrl
 								? "bg-gray-200 text-gray-800 hover:bg-gray-300 hover:scale-105"
 								: "bg-gray-200 text-gray-400 cursor-not-allowed pointer-events-none"
