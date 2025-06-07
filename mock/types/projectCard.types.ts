@@ -5,7 +5,7 @@ export type ProjectCardType = {
 	liveUrl: string;
 	githubUrl: string;
 	logo?: string;
-	badge?: "Production" | "Perso" | "Beta";
-	lastUpdate: Date,
+	badge?: string[];
+	lastUpdate: Date;
 	stats?: { label: string; value: string }[];
 };
