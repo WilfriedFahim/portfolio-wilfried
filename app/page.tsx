@@ -5,7 +5,7 @@ import Container from "@/components/Container";
 import AnimatedAvatar from "@/components/ui/AnimatedAvatar";
 import "./globals.css";
 import { FaEye, FaPaperPlane } from "react-icons/fa";
-import Projects from "@/app/projects/page";
+import { ProjectList } from "@/components/ProjectList";
 
 export default function Home() {
 	return (
@@ -43,7 +43,7 @@ export default function Home() {
 								Voir mes projets
 							</Link>
 							<Link
-								href="/contact"
+								href="#contact"
 								className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-lg font-medium transition duration-300 flex items-center"
 							>
 								<FaPaperPlane className="text-lg mr-2" />
@@ -55,7 +55,7 @@ export default function Home() {
 			</div>
 			<div className="w-full py-16 px-4 bg-white" id="projects">
 				<Container>
-					<Projects />
+					<ProjectList />
 				</Container>
 			</div>
 		</main>

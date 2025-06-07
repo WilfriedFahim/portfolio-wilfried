@@ -69,7 +69,7 @@ export default function Navbar() {
 							À propos
 						</Link>
 						<Link
-							href="/contact"
+							href="#contact"
 							className="rounded-xl bg-blue-500 text-white px-4 py-2 transition-colors duration-200 hover:bg-blue-500"
 						>
 							Contactez-moi
