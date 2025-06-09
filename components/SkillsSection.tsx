@@ -2,7 +2,7 @@
 
 "use client";
 import React, { useState } from "react";
-import { skillsMock } from "@/mock";
+import { skillsMock } from "@/mock/index";
 import { Card } from "@/components/ui/Card";
 import { SkillBadge } from "@/components/ui/SkillBadge";
 import { GroupHeader } from "@/components/ui/GroupHeader";

@@ -44,8 +44,7 @@ import {
 	FaCode,
 } from "react-icons/fa";
 
-import { SkillType } from "../types/skill.types";
-
+import { SkillType } from "@/mock/index";
 // Mock centralisé complet
 export const skillsMock: SkillType[] = [
 	// FRONTEND
