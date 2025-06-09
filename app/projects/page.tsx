@@ -1,9 +1,11 @@
+// app/projects/page.tsx
 "use client";
 
 import { useState, useEffect } from "react";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projectCardsMock } from "@/mock/index";
 import Container from "@/components/Container";
+import { ParticlesBackground } from "@/components/ParticlesBackground";
 
 export default function Projects() {
 	// PAGINATION
@@ -20,76 +22,82 @@ export default function Projects() {
 		page * projectsPerPage
 	);
 
-	// -----> SCROLL TO TOP DE LA SECTION AU CHANGEMENT DE PAGE <-----
+	// Scroll to top de la section au changement de page
 	useEffect(() => {
 		const section = document.getElementById("project-list-section");
-		if (section) {
-			// Offset de 24px pour laisser respirer sous le header sticky si besoin
-			const y = section.getBoundingClientRect().top + window.pageYOffset - 24;
-			window.scrollTo({ top: y, behavior: "smooth" });
-		} else {
-			window.scrollTo({ top: 0, behavior: "smooth" });
-		}
+		const y = section
+			? section.getBoundingClientRect().top + window.pageYOffset - 24
+			: 0;
+		window.scrollTo({ top: y, behavior: "smooth" });
 	}, [page]);
-	// ---------------------------------------------------------------
 
 	return (
-		<Container className="py-0">
-			<div className="w-full mx-auto" id="project-list-section">
-				<section className="pb-15 pt-16 px-2">
-					<div className="max-w-6xl mx-auto">
-
-						<h2 className="text-4xl sm:text-5xl font-extrabold text-center bg-gradient-to-br from-gray-700 via-blue-500 to-black text-transparent bg-clip-text tracking-tight mb-4">
-							Bienvenue dans mon monde
-						</h2>
-						<div className="mx-auto flex justify-center">
-							<span className="inline-block h-1 w-24 rounded-full bg-gradient-to-r from-indigo-400 via-violet-400 to-blue-400 opacity-50 shadow"></span>
+		<>
+			<ParticlesBackground />
+			<main className="pt-24 pb-16 bg-primary-dark min-h-screen relative z-10 text-white">
+				<Container className="py-0" id="project-list-section">
+					{/* HEADER */}
+					<section className="pb-15 pt-16 px-4 text-center">
+						<div className="max-w-4xl mx-auto">
+							<h2 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
+								<span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+									Bienvenue dans mon monde
+								</span>
+							</h2>
+							<p className="text-xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+								Des projets qui allient technique et créativité
+							</p>
+							<p className="text-xl text-gray-300 max-w-3xl mx-auto mt-6 leading-relaxed">
+								Chaque réalisation présentée ici, qu’il s’agisse d’un{" "}
+								<span className="font-medium">clone</span> de plateforme, d’un{" "}
+								<span className="font-medium">SaaS</span> ou d’une{" "}
+								<span className="font-medium">application mobile</span>, incarne
+								mon exigence, ma curiosité et mon envie de donner vie à des
+								idées ambitieuses.
+							</p>
 						</div>
-						<p className="text-xl sm:text-2xl mt-6 text-gray-800 font-semibold text-center mb-4 leading-tight">
-							<span className="bg-gradient-to-br from-gray-700 via-blue-500 to-black text-transparent bg-clip-text tracking-tight font-bold">Des projets qui allient technique et créativité</span>
-						</p>
-						<p className="text-base sm:text-lg text-gray-600 max-w-5xl mx-auto text-center leading-relaxed">
-							Chaque réalisation présentée ici, qu&rsquo;il s&rsquo;agisse d&rsquo;un <span className="text-gray-600 font-medium">clone</span> de plateforme, d&rsquo;un <span className="text-gray-700 font-medium">SaaS</span> ou d&rsquo;une <span className="text-gray-600 font-medium">application mobile</span>, incarne mon exigence, ma curiosité et mon envie de donner vie à des idées ambitieuses. <br />
-							<span className="font-semibold text-gray-700">Transformer l&rsquo;inspiration en solutions concrètes</span>, élégantes et utiles : voilà mon métier.
-						</p>
-					</div>
-				</section>
+					</section>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-					{paginatedProjects.map((p) => (
-						<ProjectCard key={p.title} {...p} />
-					))}
-				</div>
-
-				{/* PAGINATION */}
-				{totalPages > 1 && (
-					<div className="flex justify-center mt-12 mb-16 gap-2">
-						<button
-							onClick={() => setPage((p) => Math.max(1, p - 1))}
-							disabled={page === 1}
-							className="px-4 py-2 rounded-l-xl bg-gray-100 text-gray-600 font-bold border border-gray-200 hover:bg-gray-200 disabled:opacity-50"
-						>
-							Précédent
-						</button>
-						{[...Array(totalPages)].map((_, idx) => (
-							<button
-								key={idx}
-								onClick={() => setPage(idx + 1)}
-								className={`px-4 py-2 font-bold border-t border-b border-gray-200 ${page === idx + 1 ? "bg-indigo-500 text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200"}`}
-							>
-								{idx + 1}
-							</button>
+					{/* PROJECT CARDS */}
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+						{paginatedProjects.map((project) => (
+							<ProjectCard key={project.title} {...project} />
 						))}
-						<button
-							onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
-							disabled={page === totalPages}
-							className="px-4 py-2 rounded-r-xl bg-gray-100 text-gray-600 font-bold border border-gray-200 hover:bg-gray-200 disabled:opacity-50"
-						>
-							Suivant
-						</button>
 					</div>
-				)}
-			</div>
-		</Container>
+
+					{/* PAGINATION */}
+					{totalPages > 1 && (
+						<div className="flex justify-center mt-12 mb-16 gap-2">
+							<button
+								onClick={() => setPage((p) => Math.max(1, p - 1))}
+								disabled={page === 1}
+								className="px-4 py-2 rounded-l-xl bg-gray-700 text-gray-300 font-bold border border-gray-600 hover:bg-gray-600 disabled:opacity-50"
+							>
+								Précédent
+							</button>
+							{[...Array(totalPages)].map((_, idx) => (
+								<button
+									key={idx}
+									onClick={() => setPage(idx + 1)}
+									className={`px-4 py-2 font-bold border-t border-b border-gray-600 ${page === idx + 1
+										? "bg-indigo-500 text-white"
+										: "bg-gray-700 text-gray-300 hover:bg-gray-600"
+										}`}
+								>
+									{idx + 1}
+								</button>
+							))}
+							<button
+								onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
+								disabled={page === totalPages}
+								className="px-4 py-2 rounded-r-xl bg-gray-700 text-gray-300 font-bold border border-gray-600 hover:bg-gray-600 disabled:opacity-50"
+							>
+								Suivant
+							</button>
+						</div>
+					)}
+				</Container>
+			</main>
+		</>
 	);
 }

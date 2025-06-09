@@ -1,26 +1,121 @@
-import { skillsMock } from "@/mock";
-export default function SkillsSection() {
-    const groups = ["Frontend", "Backend", "Design & Outils", "Soft Skills"];
-    return (
-        <section className="py-16 bg-gradient-to-br from-white to-slate-100" id="skills">
-            <div className="max-w-5xl mx-auto px-2">
-                <h2 className="text-3xl font-bold mb-6 text-center text-indigo-700">Mes compétences</h2>
-                <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-                    {groups.map((group) => (
-                        <div key={group}>
-                            <h3 className="text-lg font-semibold mb-3 text-indigo-500">{group}</h3>
-                            <ul className="flex flex-wrap gap-2">
-                                {skillsMock.filter(s => s.group === group).map((skill) => (
-                                    <li key={skill.label} className="flex items-center gap-2 bg-white shadow-sm px-3 py-2 rounded-lg text-sm font-medium">
-                                        <skill.icon className="text-xl" />
-                                        {skill.label}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+"use client";
+
+import React from "react";
+import { ParticlesBackground } from "@/components/ParticlesBackground";
+import { FlipCard } from "@/components/FlipCard";
+import { BackToTopButton } from "@/components/BackToTopButton";
+import { skillsMock } from "@/mock/index";
+import { FaCode, FaServer, FaTools, FaMobileAlt, FaUsers } from "react-icons/fa";
+
+const sections = [
+  {
+    key: "frontend",
+    title: "Frontend",
+    Icon: FaCode,
+    iconColor: "text-blue-400",
+    frontBg: "frontend-bg",
+    backBg: "bg-blue-400/10",
+    decor1: "absolute -top-32 -right-32 w-96 h-96 bg-blue-500/10 blur-3xl",
+    decor2: "absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 blur-xl",
+  },
+  {
+    key: "backend",
+    title: "Backend",
+    Icon: FaServer,
+    iconColor: "text-purple-400",
+    frontBg: "backend-bg",
+    backBg: "bg-purple-500/10",
+    decor1: "absolute top-0 left-0 w-64 h-64 bg-purple-500/10 blur-3xl",
+    decor2: "absolute bottom-10 right-0 w-48 h-48 bg-purple-400/10 blur-xl",
+  },
+  {
+    key: "tools",
+    title: "Outils & Technologies",
+    Icon: FaTools,
+    iconColor: "text-yellow-500",
+    frontBg: "tools-bg",
+    backBg: "bg-yellow-600/10",
+    decor1: "absolute top-20 right-10 w-72 h-72 bg-yellow-600/10 blur-3xl",
+    decor2: "absolute bottom-0 left-20 w-56 h-56 bg-orange-500/10 blur-xl",
+  },
+  {
+    key: "mobile",
+    title: "Mobile",
+    Icon: FaMobileAlt,
+    iconColor: "text-green-400",
+    frontBg: "mobile-bg",
+    backBg: "bg-green-500/10",
+    decor1: "absolute top-1/4 left-1/4 w-80 h-80 bg-green-500/10 blur-3xl",
+    decor2: "absolute bottom-20 right-10 w-64 h-64 bg-emerald-400/10 blur-xl",
+  },
+  {
+    key: "soft-skills",
+    title: "Soft Skills",
+    Icon: FaUsers,
+    iconColor: "text-green-400",
+    frontBg: "soft-skills-bg",
+    backBg: "bg-green-500/10",
+    decor1: "absolute top-1/4 left-1/4 w-80 h-80 bg-green-500/10 blur-3xl",
+    decor2: "absolute bottom-20 right-10 w-64 h-64 bg-emerald-400/10 blur-xl",
+  },
+];
+
+export default function SkillsPage() {
+  return (
+    <>
+      <ParticlesBackground />
+      <main className="pt-24 pb-16 bg-primary-dark min-h-screen relative z-10 text-white">
+        <header className="text-center py-16">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+              Mes Compétences
+            </span>
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Découvrez mon expertise technique et humaine<br />
+            à travers ces différents domaines
+          </p>
+        </header>
+
+        {sections.map(({ key, title, Icon, iconColor, frontBg, backBg, decor1, decor2 }) => {
+          const items = skillsMock.filter(s => {
+            if (key === "tools") return s.group === "Design & Outils";
+            if (key === "soft-skills") return s.group === "Soft Skills";
+            if (key === "mobile") return s.group === "Mobile";
+            return s.group.toLowerCase() === key;
+          });
+
+          return (
+            <section key={key} id={key} className="py-16 relative overflow-hidden">
+              <div className="container mx-auto px-4 max-w-6xl">
+                <div className="text-center mb-16 flex items-center justify-center gap-3">
+                  <Icon className={`text-2xl ${iconColor}`} />
+                  <h2 className="section-title text-3xl font-bold text-white">
+                    {title}
+                  </h2>
                 </div>
-            </div>
-        </section>
-    );
+                <div className="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {items.map(s => (
+                    <FlipCard
+                      key={s.label}
+                      icon={s.icon}
+                      title={s.label}
+                      level={s.level}
+                      description={s.description}
+                      frontBg={frontBg}
+                      backBg={backBg}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className={decor1} />
+              <div className={decor2} />
+            </section>
+          );
+        })}
+
+        <BackToTopButton />
+      </main>
+    </>
+  );
 }

@@ -20,3 +20,4 @@ stats: [
     { label: "PRODUCTION", value: "Oui", desc: "Projet déployé en production ?" },
     { label: "DOCS", value: "✔️", desc: "Documentation technique/projet rédigée" }
 ]
+

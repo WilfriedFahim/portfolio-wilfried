@@ -9,6 +9,7 @@ import { ProjectList } from "@/components/ProjectList";
 import SkillsSection from "@/components/SkillsSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
+import { FloatingNav } from '../components/FloatingNav';
 
 export default function Home() {
 	return (
@@ -62,6 +63,7 @@ export default function Home() {
 			<div className="w-full px-4" id="#ContactSection">
 				<ContactSection />
 			</div>
+			<FloatingNav />
 		</main>
 	);
 }
