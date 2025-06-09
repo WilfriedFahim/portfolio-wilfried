@@ -42,8 +42,8 @@ export default function Projects() {
 						<h2 className="text-4xl sm:text-5xl font-extrabold text-center bg-gradient-to-br from-gray-700 via-blue-500 to-black text-transparent bg-clip-text tracking-tight mb-4">
 							Bienvenue dans mon monde
 						</h2>
-						<div className="mx-auto mt-4 flex justify-center">
-							<span className="inline-block mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-indigo-400 via-violet-400 to-blue-400 opacity-50 shadow"></span>
+						<div className="mx-auto flex justify-center">
+							<span className="inline-block h-1 w-24 rounded-full bg-gradient-to-r from-indigo-400 via-violet-400 to-blue-400 opacity-50 shadow"></span>
 						</div>
 						<p className="text-xl sm:text-2xl mt-6 text-gray-800 font-semibold text-center mb-4 leading-tight">
 							<span className="bg-gradient-to-br from-gray-700 via-blue-500 to-black text-transparent bg-clip-text tracking-tight font-bold">Des projets qui allient technique et créativité</span>

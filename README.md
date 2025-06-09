@@ -22,6 +22,7 @@ Ce projet est ma vitrine technique : il regroupe mes premiers clones de sites we
 - **React** (via Next.js) - Bibliothèque UI
 - **TypeScript** - Typage statique
 - **Tailwind CSS** - Framework CSS utilitaire
+- **Framer Motion** - Animations fluides
 - **ESLint** - Linting du code
 - **PostCSS** - Processing CSS
 - **Git & GitHub** - Versioning
@@ -40,13 +41,15 @@ Ce projet est ma vitrine technique : il regroupe mes premiers clones de sites we
 
 ## 📄 Fonctionnalités
 
-- Interface rapide, responsive et propre
+- Interface rapide, responsive et moderne
 - Routing avec App Router (Next.js 15)
 - Design utilitaire avec Tailwind CSS
+- Animations fluides avec Framer Motion
 - Layout global (`layout.tsx`)
 - Configuration TypeScript stricte
 - Linting avec ESLint
 - Déploiement continu via GitHub + Vercel
+- Sections : Accueil, Projets, Compétences, À propos, Contact
 
 ---
 
@@ -63,38 +66,95 @@ Ce projet est ma vitrine technique : il regroupe mes premiers clones de sites we
 ├─ app/                    # Dossier principal Next.js (App Router)
 │  ├─ layout.tsx          # Layout global
 │  ├─ page.tsx            # Page d'accueil
+│  ├─ projects/           # Page projets
 │  └─ globals.css         # Styles globaux
 │
 ├─ components/            # Composants React réutilisables
-│  └─ Navbar.tsx         # Barre de navigation
+│  ├─ ui/                # Composants UI de base
+│  ├─ ProjectCard.tsx    # Carte de projet
+│  ├─ ProjectList.tsx    # Liste des projets
+│  ├─ SkillsSection.tsx  # Section compétences
+│  ├─ AboutSection.tsx   # Section à propos
+│  └─ ContactSection.tsx # Section contact
 │
-├─ public/                # Ressources statiques
-│  └─ images/            # Images du projet
+├─ mock/                 # Données mockées
+│  ├─ data/             # Données statiques
+│  └─ types/            # Types TypeScript
 │
-├─ .next/                # Dossier de build Next.js (généré)
-├─ node_modules/         # Dépendances (généré)
+├─ public/              # Ressources statiques
+│  └─ images/          # Images du projet
 │
-├─ next.config.ts        # Configuration Next.js
-├─ next-env.d.ts         # Types Next.js
-├─ tailwind.config.js    # Configuration Tailwind
-├─ tsconfig.json         # Configuration TypeScript
-├─ postcss.config.mjs    # Configuration PostCSS
-├─ eslint.config.mjs     # Configuration ESLint
-├─ package.json          # Dépendances et scripts
-├─ package-lock.json     # Verrouillage des versions
-├─ .gitignore           # Fichiers ignorés par Git
-└─ LICENSE              # Licence MIT
+├─ .next/              # Dossier de build Next.js (généré)
+├─ node_modules/       # Dépendances (généré)
+│
+├─ next.config.ts      # Configuration Next.js
+├─ next-env.d.ts       # Types Next.js
+├─ tailwind.config.js  # Configuration Tailwind
+├─ tsconfig.json       # Configuration TypeScript
+├─ postcss.config.mjs  # Configuration PostCSS
+├─ eslint.config.mjs   # Configuration ESLint
+├─ package.json        # Dépendances et scripts
+├─ package-lock.json   # Verrouillage des versions
+├─ .gitignore         # Fichiers ignorés par Git
+└─ LICENSE            # Licence MIT
 ```
 
 ---
 
 ## 🧱 Projets en cours
 
-- ✅ **Clone Web #1** : [Linkedin](https://github.com/WilfriedFahim/linkedin-clone)
-- 🔧 **Clone Web #2** : [Airbnb](https://github.com/WilfriedFahim/airbnb-clone)
-- **Jarvis** : siteweb qui permet au commercial, gestionnaire, manager de gerer des contrats clients
-- 📱 **Mini-App Mobile** : app React Native via Expo (v1 en ligne)
-- 🧠 **EdgeMind** : coach IA personnel pour les traders
+### 🌐 Clones Web
+
+- **LinkedIn Clone** - [GitHub](https://github.com/WilfriedFahim/linkedin-clone)
+
+  - Authentification, feed dynamique, profils, messagerie
+  - Stack: Next.js, React, Tailwind CSS, Firebase
+  - Status: En développement
+
+- **Twitch Clone** - [GitHub](https://github.com/WilfriedFahim/twitch-clone)
+
+  - Streaming vidéo, chat en direct, page streamer
+  - Stack: React, Next.js, Tailwind CSS, TypeScript
+  - Status: Prochainement
+
+### 💼 Applications Web
+
+- **Yamo** - Localisation de pharmacies
+
+  - Géolocalisation en temps réel
+  - Recherche de pharmacies ouvertes
+  - Stack: Next.js, React, TypeScript, Tailwind CSS
+  - Status: Prochainement
+
+- **CarEasy** - Transport en Afrique
+  - Mise en relation conducteurs/passagers
+  - Navigation et paiement intégrés
+  - Stack: Next.js, React, TypeScript, Tailwind CSS
+  - Status: Prochainement
+
+### 💼 Applications Métier
+
+- **Jarvis** - Gestion de contrats clients
+  - Dashboard pour commerciaux et managers
+  - Suivi des contrats, analytics, notifications
+  - Stack: React, Node.js, PostgreSQL
+  - Status: En conception
+
+### 📱 Applications Mobile
+
+- **Portfolio Mobile** - [GitHub](https://github.com/WilfriedFahim/portfolio-mobile)
+
+  - Version mobile du portfolio
+  - Stack: React Native, Expo, TypeScript
+  - Status: En développement
+
+### 🧠 Intelligence Artificielle
+
+- **EdgeMind** - Coach IA pour traders
+  - Analyse comportementale en temps réel
+  - Mentor IA personnalisé
+  - Stack: Next.js, Python, FastAPI
+  - Status: MVP en cours
 
 ---
 

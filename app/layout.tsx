@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 // Chargement du CSS global (Tailwind + éventuelles autres règles)
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
@@ -35,6 +36,7 @@ export default function RootLayout({
 				<Navbar />
 				{/* Contenu spécifique à chaque route (app/page.tsx, app/projets/page.tsx, etc.) */}
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);

@@ -20,9 +20,9 @@ import {
 	SiFastapi,
 	SiGit,
 	SiFigma,
+	SiVercel,
 	SiDocker,
 	SiLinux,
-	SiVercel,
 	SiPostman,
 	SiJirasoftware,
 	SiTrello,
@@ -35,8 +35,8 @@ import {
 	FaUserCheck,
 	FaHandsHelping,
 	FaComments,
-	FaDatabase,
 	FaTasks,
+	FaDatabase,
 	FaBrain,
 	FaBolt,
 	FaClock,
@@ -92,6 +92,12 @@ export const skillsMock: SkillType[] = [
 		color: "bg-[#1572B6]/10 text-[#1572B6]",
 	},
 	{
+		label: "Redux",
+		group: "Frontend",
+		icon: SiRedux,
+		color: "bg-[#764ABC]/10 text-[#764ABC]",
+	},
+	{
 		label: "Framer Motion",
 		group: "Frontend",
 		icon: SiFramer,
@@ -106,10 +112,28 @@ export const skillsMock: SkillType[] = [
 		color: "bg-[#3776AB]/10 text-[#3776AB]",
 	},
 	{
-		label: "FAST API",
+		label: "Node.js",
 		group: "Backend",
-		icon: SiFastapi,
-		color: "bg-[#009688]/10 text-[#009688]",
+		icon: SiNodedotjs,
+		color: "bg-[#339933]/10 text-[#339933]",
+	},
+	{
+		label: "Express.js",
+		group: "Backend",
+		icon: SiExpress,
+		color: "bg-black/10 text-black",
+	},
+	{
+		label: "Firebase",
+		group: "Backend",
+		icon: SiFirebase,
+		color: "bg-[#FFCA28]/10 text-[#FFCA28]",
+	},
+	{
+		label: "MongoDB (NoSQL)",
+		group: "Backend",
+		icon: SiMongodb,
+		color: "bg-[#47A248]/10 text-[#47A248]",
 	},
 	{
 		label: "SQL (MySQL)",
@@ -118,12 +142,35 @@ export const skillsMock: SkillType[] = [
 		color: "bg-[#4479A1]/10 text-[#4479A1]",
 	},
 	{
+		label: "SQL (PostgreSQL)",
+		group: "Backend",
+		icon: SiPostgresql,
+		color: "bg-[#336791]/10 text-[#336791]",
+	},
+	{
+		label: "REST API",
+		group: "Backend",
+		icon: FaBolt,
+		color: "bg-yellow-100 text-yellow-600",
+	},
+	{
+		label: "FAST API",
+		group: "Backend",
+		icon: SiFastapi,
+		color: "bg-[#009688]/10 text-[#009688]",
+	},
+	{
+		label: "Authentification (JWT/OAuth)",
+		group: "Backend",
+		icon: FaUserCheck,
+		color: "bg-green-100 text-green-600",
+	},
+	{
   		label: "Microsoft Access",
-  		group: "Backend",
+  		group: "Outils",
   		icon: FaDatabase,
   		color: "bg-[#A4373A]/10 text-[#A4373A]",
 	},
-
 
 	// DESIGN & OUTILS
 	{
@@ -145,6 +192,12 @@ export const skillsMock: SkillType[] = [
 		color: "bg-[#F24E1E]/10 text-[#F24E1E]",
 	},
 	{
+		label: "Docker (bases)",
+		group: "Outils",
+		icon: SiDocker,
+		color: "bg-[#2496ED]/10 text-[#2496ED]",
+	},
+	{
 		label: "Visual Studio Code",
 		group: "Outils",
 		icon: FaCode,
@@ -155,6 +208,18 @@ export const skillsMock: SkillType[] = [
 		group: "Outils",
 		icon: SiLinux,
 		color: "bg-black/10 text-black",
+	},
+	{
+		label: "Postman (API)",
+		group: "Outils",
+		icon: SiPostman,
+		color: "bg-[#FF6C37]/10 text-[#FF6C37]",
+	},
+	{
+		label: "Jira (gestion projet)",
+		group: "Outils",
+		icon: SiJirasoftware,
+		color: "bg-[#0052CC]/10 text-[#0052CC]",
 	},
 	{
 		label: "Trello (gestion projet)",
@@ -168,7 +233,7 @@ export const skillsMock: SkillType[] = [
 		icon: SiNotion,
 		color: "bg-black/10 text-black",
 	},
-		{
+	{
   label: "Vercel",
   group: "Outils",
   icon: SiVercel,

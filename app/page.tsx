@@ -6,10 +6,13 @@ import AnimatedAvatar from "@/components/ui/AnimatedAvatar";
 import "./globals.css";
 import { FaEye, FaPaperPlane } from "react-icons/fa";
 import { ProjectList } from "@/components/ProjectList";
+import SkillsSection from "@/components/SkillsSection";
+import AboutSection from "@/components/AboutSection";
+import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
 	return (
-		<main>
+		<main className="bg-white">
 			<div className="w-full bg-gradient-to-br from-blue-600 via-blue-400 to-violet-700 shadow-lg">
 				<Container className="py-20 flex flex-col xl:flex-row items-center justify-between">
 					{/* zone image*/}
@@ -53,10 +56,11 @@ export default function Home() {
 					</div>
 				</Container>
 			</div>
-			<div className="w-full py-16 px-4 bg-white" id="projects">
-				<Container>
-					<ProjectList />
-				</Container>
+			<ProjectList />
+			<SkillsSection />
+			<AboutSection />
+			<div className="w-full px-4" id="#ContactSection">
+				<ContactSection />
 			</div>
 		</main>
 	);
