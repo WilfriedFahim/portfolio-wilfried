@@ -98,7 +98,7 @@ export default function SkillsPage() {
               >
                 <div className="container mx-auto px-4 max-w-6xl">
                   <div className="text-center mb-16 flex items-center justify-center gap-3">
-                    <Icon className={`text-2xl ${iconColor}`} />
+                    <Icon className={`text-4xl ${iconColor}`} />
                     <h2 className="section-title text-3xl font-bold text-white">
                       {title}
                     </h2>
