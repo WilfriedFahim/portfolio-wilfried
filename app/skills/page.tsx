@@ -1,11 +1,13 @@
+// app/skills/page.tsx
 "use client";
 
 import React from "react";
 import { ParticlesBackground } from "@/components/ParticlesBackground";
 import { FlipCard } from "@/components/FlipCard";
-import { BackToTopButton } from "@/components/BackToTopButton";
 import { skillsMock } from "@/mock/index";
+import { BackToTopButton } from "@/components/BackToTopButton";
 import { FaCode, FaServer, FaTools, FaMobileAlt, FaUsers } from "react-icons/fa";
+import { FloatingNav } from "@/components/FloatingNav";
 
 const sections = [
   {
@@ -15,7 +17,7 @@ const sections = [
     iconColor: "text-blue-400",
     frontBg: "frontend-bg",
     backBg: "bg-blue-400/10",
-    decor1: "absolute -top-32 -right-32 w-96 h-96 bg-blue-500/10 blur-3xl",
+    decor1: "absolute -top-32 -right-32 w-96 h-96 bg-blue-500/10 blur-3xl z-0",
     decor2: "absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 blur-xl",
   },
   {
@@ -65,6 +67,7 @@ export default function SkillsPage() {
     <>
       <ParticlesBackground />
       <main className="pt-24 pb-16 bg-primary-dark min-h-screen relative z-10 text-white">
+        {/* Header */}
         <header className="text-center py-16">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
@@ -77,44 +80,52 @@ export default function SkillsPage() {
           </p>
         </header>
 
-        {sections.map(({ key, title, Icon, iconColor, frontBg, backBg, decor1, decor2 }) => {
-          const items = skillsMock.filter(s => {
-            if (key === "tools") return s.group === "Design & Outils";
-            if (key === "soft-skills") return s.group === "Soft Skills";
-            if (key === "mobile") return s.group === "Mobile";
-            return s.group.toLowerCase() === key;
-          });
+        {/* Sections */}
+        {sections.map(
+          ({ key, title, Icon, iconColor, frontBg, backBg, decor1, decor2 }) => {
+            const items = skillsMock.filter((s) => {
+              if (key === "tools") return s.group === "Design & Outils";
+              if (key === "soft-skills") return s.group === "Soft Skills";
+              if (key === "mobile") return s.group === "Mobile";
+              return s.group.toLowerCase() === key;
+            });
 
-          return (
-            <section key={key} id={key} className="py-16 relative overflow-hidden">
-              <div className="container mx-auto px-4 max-w-6xl">
-                <div className="text-center mb-16 flex items-center justify-center gap-3">
-                  <Icon className={`text-2xl ${iconColor}`} />
-                  <h2 className="section-title text-3xl font-bold text-white">
-                    {title}
-                  </h2>
+            return (
+              <section
+                key={key}
+                id={key}
+                className="py-16 relative overflow-hidden"
+              >
+                <div className="container mx-auto px-4 max-w-6xl">
+                  <div className="text-center mb-16 flex items-center justify-center gap-3">
+                    <Icon className={`text-2xl ${iconColor}`} />
+                    <h2 className="section-title text-3xl font-bold text-white">
+                      {title}
+                    </h2>
+                  </div>
+                  <div className="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    {items.map((s) => (
+                      <FlipCard
+                        key={s.label}
+                        icon={s.icon}
+                        title={s.label}
+                        level={s.level}
+                        description={s.description}
+                        frontBg={frontBg}
+                        backBg={backBg}
+                      />
+                    ))}
+                  </div>
                 </div>
-                <div className="card-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                  {items.map(s => (
-                    <FlipCard
-                      key={s.label}
-                      icon={s.icon}
-                      title={s.label}
-                      level={s.level}
-                      description={s.description}
-                      frontBg={frontBg}
-                      backBg={backBg}
-                    />
-                  ))}
-                </div>
-              </div>
-              <div className={decor1} />
-              <div className={decor2} />
-            </section>
-          );
-        })}
+                <div className={decor1} />
+                <div className={decor2} />
+              </section>
+            );
+          }
+        )}
 
         <BackToTopButton />
+        <FloatingNav />
       </main>
     </>
   );

@@ -1,25 +1,24 @@
 // components/SkillsSection.tsx
-
 "use client";
-import React, { useState } from "react";
+
+import React from "react";
+import Link from "next/link";
 import { skillsMock } from "@/mock/index";
 import { Card } from "@/components/ui/Card";
 import { SkillBadge } from "@/components/ui/SkillBadge";
 import { GroupHeader } from "@/components/ui/GroupHeader";
+import { ArrowRight } from "lucide-react";
 
-const groups = [
-  "Frontend",
-  "Backend",
-  "Design & Outils",
-  "Soft Skills",
-];
+// Group labels and their corresponding section slugs on /skills
+const groups = ["Frontend", "Backend", "Design & Outils", "Soft Skills"];
+const slugs: Record<string, string> = {
+  Frontend: "frontend",
+  Backend: "backend",
+  "Design & Outils": "tools",
+  "Soft Skills": "soft-skills",
+};
 
 export default function SkillsSection() {
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
-  const toggleGroup = (group: string) => {
-    setExpanded(prev => ({ ...prev, [group]: !prev[group] }));
-  };
-
   return (
     <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-6xl mx-auto">
@@ -34,20 +33,18 @@ export default function SkillsSection() {
           </p>
         </div>
 
-        {/* Grid des groupes */}
+        {/* Groups grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {groups.map(group => {
-            const allSkills = skillsMock.filter(s =>
-              group === "Design & Outils" ? s.group === "Outils" : s.group === group
-            );
-            const isExpanded = expanded[group];
-            const displayed = isExpanded ? allSkills : allSkills.slice(0, 3);
+          {groups.map((group) => {
+            const items = skillsMock.filter((s) => s.group === group);
+            const preview = items.slice(0, 3);
+            const slug = slugs[group];
 
             return (
               <Card key={group} className="flex flex-col h-full">
                 <GroupHeader title={group} />
                 <ul className="space-y-3 flex-1">
-                  {displayed.map(skill => (
+                  {preview.map((skill) => (
                     <SkillBadge
                       key={skill.label}
                       icon={skill.icon}
@@ -56,21 +53,17 @@ export default function SkillsSection() {
                     />
                   ))}
                 </ul>
-                {allSkills.length > 3 && (
-                  <div className="mt-4">
-                    <button
-                      onClick={() => toggleGroup(group)}
-                      className="w-full mt-auto bg-blue-500 text-white font-medium py-2 rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-200"
-                    >
-                      {isExpanded ? "Voir moins" : "Voir plus"}
-                    </button>
-                  </div>
-                )}
+                <Link
+                  href={`/skills#${slug}`}
+                  className="mt-4 inline-flex items-center justify-center w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold py-2 rounded-lg shadow-lg hover:from-blue-600 hover:to-indigo-600 transition"
+                >
+                  Voir toutes <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
               </Card>
             );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }
