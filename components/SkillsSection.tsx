@@ -35,7 +35,7 @@ export default function SkillsSection() {
         </div>
 
         {/* Grid des groupes */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {groups.map(group => {
             const allSkills = skillsMock.filter(s =>
               group === "Design & Outils" ? s.group === "Outils" : s.group === group
