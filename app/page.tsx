@@ -7,7 +7,7 @@ import "./globals.css";
 import { FaEye, FaPaperPlane } from "react-icons/fa";
 import { ProjectList } from "@/components/ProjectList";
 import SkillsSection from "@/components/SkillsSection";
-import AboutSection from "@/components/AboutSection";
+import AboutPreview from "@/components/AboutPreview";
 import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
@@ -58,7 +58,7 @@ export default function Home() {
 			</div>
 			<ProjectList />
 			<SkillsSection />
-			<AboutSection />
+			<AboutPreview />
 			<div className="w-full px-4" id="#ContactSection">
 				<ContactSection />
 			</div>
