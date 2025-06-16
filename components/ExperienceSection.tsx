@@ -70,11 +70,15 @@ const experiences: Experience[] = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-20 px-4 lg:px-8 bg-gray-50">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-extrabold text-gray-800 mb-12 text-center">
-          Mon Parcours
-        </h2>
+    <section id="experience" className="mt-16 mb-8 px-4 lg:px-8">
+      <div className="max-w-6xl mx-auto mb-8">
+        <header className="text-center">
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+              Mon Parcours
+            </span>
+          </h1>
+        </header>
         <div className="space-y-8">
           {experiences.map((exp, idx) => (
             <motion.div
