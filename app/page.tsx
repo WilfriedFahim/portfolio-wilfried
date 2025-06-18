@@ -9,6 +9,7 @@ import { ProjectList } from "@/components/ProjectList";
 import SkillsSection from "@/components/SkillsSection";
 import AboutPreview from "@/components/AboutPreview";
 import ContactSection from "@/components/ContactSection";
+import { BackToTopButton } from "@/components/ui/BackToTopButton";
 
 export default function Home() {
 	return (
@@ -62,6 +63,7 @@ export default function Home() {
 			<div className="w-full px-4" id="#ContactSection">
 				<ContactSection />
 			</div>
+			<BackToTopButton />
 		</main>
 	);
 }

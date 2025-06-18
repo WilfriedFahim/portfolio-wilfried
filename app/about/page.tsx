@@ -29,11 +29,11 @@ export default function AboutPage() {
           <header className="text-center mt-12">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-                Développeur & Entrepreneur dans l’Âme
+                Développeur & Entrepreneur dans l&rsquo;Âme
               </span>
             </h1>
             <p className="text-gray-300 max-w-4xl mx-auto">
-              Encore junior en développement, j’apporte déjà une expérience forte en entrepreneuriat et vision produit. <br />
+              Encore junior en développement, j&rsquo;apporte déjà une expérience forte en entrepreneuriat et vision produit. <br />
               Mon objectif ? Transformer les idées en expériences web impactantes.
             </p>
           </header>

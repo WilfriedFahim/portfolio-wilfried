@@ -5,7 +5,7 @@ import React from "react";
 import { ParticlesBackground } from "@/components/ParticlesBackground";
 import { FlipCard } from "@/components/FlipCard";
 import { skillsMock } from "@/mock/index";
-import { BackToTopButton } from "@/components/BackToTopButton";
+import { BackToTopButton } from "@/components/ui/BackToTopButton";
 import { FaCode, FaServer, FaTools, FaMobileAlt, FaUsers } from "react-icons/fa";
 import { FloatingNav } from "@/components/FloatingNav";
 
