@@ -68,13 +68,13 @@ export default function SkillsPage() {
       <ParticlesBackground />
       <main className="pt-24 pb-16 bg-primary-dark min-h-screen relative z-10 text-white">
         {/* Header */}
-        <header className="text-center py-16">
+        <header className="text-center mt-16">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
               Mes Compétences
             </span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-300 max-w-2xl mx-auto">
             Découvrez mon expertise technique et humaine<br />
             à travers ces différents domaines
           </p>

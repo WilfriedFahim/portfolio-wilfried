@@ -37,17 +37,17 @@ export default function Projects() {
 			<main className="pt-24 pb-16 bg-primary-dark min-h-screen relative z-10 text-white">
 				<Container className="py-0" id="project-list-section">
 					{/* HEADER */}
-					<section className="pb-15 pt-16 px-4 text-center">
+					<section className="pb-15 mt-16 px-4 text-center">
 						<div className="max-w-4xl mx-auto">
 							<h2 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
 								<span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
 									Bienvenue dans mon monde
 								</span>
 							</h2>
-							<p className="text-xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+							<p className="text-xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-4">
 								Des projets qui allient technique et créativité
 							</p>
-							<p className="text-xl text-gray-300 max-w-3xl mx-auto mt-6 leading-relaxed">
+							<p className="text-gray-300 max-w-2xl mx-auto">
 								Chaque réalisation présentée ici, qu’il s’agisse d’un{" "}
 								<span className="font-medium">clone</span> de plateforme, d’un{" "}
 								<span className="font-medium">SaaS</span> ou d’une{" "}

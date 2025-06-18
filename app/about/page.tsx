@@ -10,6 +10,7 @@ import { ExperienceSection } from "@/components/ExperienceSection";
 import { TimelineWithRecs } from "@/components/TimelineWithRecs";
 import Container from '@/components/Container';
 import AnimatedAvatar from '@/components/ui/AnimatedAvatar';
+import { BackToTopButton } from "@/components/ui/BackToTopButton";
 
 export default function AboutPage() {
   return (
@@ -25,26 +26,28 @@ export default function AboutPage() {
             <AnimatedAvatar />
           </div>
 
-          <header className="text-center">
+          <header className="text-center mt-12">
             <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-                Mes Compétences
+                Développeur & Entrepreneur dans l’Âme
               </span>
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Découvrez mon expertise technique et humaine<br />
-              à travers ces différents domaines
+            <p className="text-gray-300 max-w-4xl mx-auto">
+              Encore junior en développement, j’apporte déjà une expérience forte en entrepreneuriat et vision produit. <br />
+              Mon objectif ? Transformer les idées en expériences web impactantes.
             </p>
           </header>
+
 
           <section className="mt-16 sm:px-6 lg:px-8">
             <TimelineWithRecs />
           </section>
 
           {/* Section expériences – named export */}
-          <section className="mt-16">
+          <section className="mt-24">
             <ExperienceSection />
           </section>
+          <BackToTopButton />
         </Container>
       </main>
     </>

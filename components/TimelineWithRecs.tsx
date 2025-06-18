@@ -57,7 +57,7 @@ export function TimelineWithRecs() {
           <a
             href="/Wilfried_Chi_CV.pdf"
             download
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition duration-300"
+            className="w-full inline-flex items-center justify-center bg-blue-600 text-white font-medium py-2 px-4 rounded-lg hover:bg-blue-700 transition"
           >
             <FaDownload className="mr-2" /> Télécharger mon CV
           </a>

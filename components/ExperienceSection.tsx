@@ -70,14 +70,18 @@ const experiences: Experience[] = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="mt-16 mb-8 px-4 lg:px-8">
-      <div className="max-w-6xl mx-auto mb-8">
-        <header className="text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
+    <section id="experience" className="px-4 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <header className="text-center mb-6">
+          <h3 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-              Mon Parcours
+              Mon Parcours Professionnel
             </span>
-          </h1>
+          </h3>
+          <p className="text-gray-300 max-w-2xl mx-auto">
+            Découvrez comment, de mes premiers pas en programmation à ma reconversion en front-end,
+            j’ai bâti mon expertise grâce à un esprit entrepreneurial et une vision produit concrète.
+          </p>
         </header>
         <div className="space-y-8">
           {experiences.map((exp, idx) => (
