@@ -37,15 +37,15 @@ export default function Navbar() {
 								key={href}
 								href={href}
 								className={`nav-link px-3 py-2 transition-colors duration-200 ${pathname === href
-										? "text-blue-500 font-bold"
-										: "text-gray-700 hover:text-blue-500"
+									? "text-blue-500 font-bold"
+									: "text-gray-700 hover:text-blue-500"
 									}`}
 							>
 								{label}
 							</Link>
 						))}
 						<Link
-							href="/contact"
+							href="#contact"
 							className="rounded-xl bg-blue-500 text-white px-4 py-2 transition-colors duration-200 hover:bg-blue-500"
 						>
 							Contactez-moi
@@ -93,15 +93,15 @@ export default function Navbar() {
 							href={href}
 							onClick={handleNavLinkClick}
 							className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === href
-									? "text-blue-500 font-bold"
-									: "text-gray-700 hover:text-blue-500"
+								? "text-blue-500 font-bold"
+								: "text-gray-700 hover:text-blue-500"
 								}`}
 						>
 							{label}
 						</Link>
 					))}
 					<Link
-						href="/contact"
+						href="#/ContactSection"
 						onClick={handleNavLinkClick}
 						className="block px-3 py-2 rounded-md text-base font-bold text-white bg-blue-500 hover:bg-blue-500"
 					>
