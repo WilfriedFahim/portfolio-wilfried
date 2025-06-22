@@ -43,33 +43,6 @@ Ce projet est ma vitrine technique : il regroupe mes clones de sites web, une mi
 
 ---
 
-## 📊 Statistiques du projet
-
-| Indicateur       | Valeur                     | Description                               |
-| ---------------- | -------------------------- | ----------------------------------------- |
-| LIGNES           | x                          | Nombre total de lignes de code            |
-| COMMITS          | x                          | Nombre de commits Git sur le projet       |
-| TESTS            | x                          | Couverture ou nombre de tests automatisés |
-| NOTE             | x                          | Note de satisfaction ou auto-évaluation   |
-| UTILISATEURS     | 5+                         | Nombre d'utilisateurs/testeurs            |
-| JOURS DE DEV     | 22j                        | Temps total de développement              |
-| CONTRIBUTEURS    | 1                          | Nombre de contributeurs                   |
-| MIS À JOUR       | 06/2025                    | Date de dernière mise à jour              |
-| STACK            | React, Next.js, TypeScript | Principales technologies                  |
-| LIBRAIRIES       | 12                         | Nombre de librairies/outils utilisés      |
-| DÉPLOIEMENTS     | 10                         | Nombre de déploiements                    |
-| VERSIONS         | v2.3                       | Numéro de version                         |
-| DERNIER COMMIT   | 2025-06-05                 | Date du dernier commit                    |
-| SCORE PERF       | 98/100                     | Score de performance Lighthouse           |
-| COUVERTURE CI/CD | Oui                        | Intégration/déploiement continu           |
-| VISITES          | 150+                       | Nombre de visites uniques                 |
-| FEATURES         | 7                          | Nombre de fonctionnalités principales     |
-| BUGS CORRIGÉS    | 23                         | Nombre de bugs/patchs réalisés            |
-| PRODUCTION       | Oui                        | Projet déployé en production              |
-| DOCS             | ✔️                         | Documentation technique rédigée           |
-
----
-
 ## 📄 Fonctionnalités
 
 - Interface rapide, responsive et moderne
