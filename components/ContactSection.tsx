@@ -1,20 +1,11 @@
 // components/ContactSection.tsx
 "use client";
 
-import { useState } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { Mail, Phone, MapPin, Send, Info, Clock } from "lucide-react";
 import Image from "next/image";
 
 export default function ContactSection() {
-    const [sent, setSent] = useState(false);
-
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setSent(true);
-        setTimeout(() => setSent(false), 4000);
-    };
-
     return (
         <section className="py-20 bg-gradient-to-br from-indigo-50 to-blue-50" id="contact">
             <div className="max-w-6xl w-full mx-auto px-4">
@@ -71,7 +62,7 @@ export default function ContactSection() {
                                 <h3 className="font-semibold text-gray-800 text-lg mb-4">Connectons-nous</h3>
                                 <div className="flex space-x-4">
                                     <a
-                                        href="https://linkedin.com/in/wilfriedfahim"
+                                        href="https://www.linkedin.com/in/wilfriedk/"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="bg-gray-100 text-indigo-600 rounded-full p-3 w-12 h-12 flex items-center justify-center social-icon hover:bg-indigo-50"
@@ -87,7 +78,7 @@ export default function ContactSection() {
                                         <FaGithub className="w-6 h-6" />
                                     </a>
                                     <a
-                                        href="https://www.malt.fr/profile/wilfriedfahim"
+                                        href="https://www.malt.fr/profile/wilfriedkouassi1"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="bg-gray-100 text-red-600 rounded-full p-3 w-12 h-12 flex items-center justify-center social-icon hover:bg-indigo-50"
@@ -123,8 +114,18 @@ export default function ContactSection() {
                         <div className="absolute -top-10 -right-10 w-32 h-32 bg-indigo-100 rounded-full opacity-20"></div>
                         <div className="absolute bottom-20 -left-8 w-24 h-24 bg-indigo-200 rounded-full opacity-20"></div>
                         <div className="absolute top-1/3 left-1/4 w-16 h-16 bg-indigo-300 rounded-full opacity-10"></div>
-                        {/* Form */}
-                        <form className="relative z-10 space-y-6" onSubmit={handleSubmit}>
+                        {/* Formulaire Formsubmit.co */}
+                        <form
+                            className="relative z-10 space-y-6"
+                            action="https://formsubmit.co/kouassi.Wilfried.pro@gmail.Com"
+                            method="POST"
+                            autoComplete="off"
+                        >
+                            {/* Options Formsubmit */}
+                            <input type="hidden" name="_captcha" value="false" />
+                            <input type="hidden" name="_subject" value="Nouveau message du portfolio" />
+                            <input type="hidden" name="_next" value="https://portfolio-wilfried-chi.vercel.app/merci" />
+                            <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
                             <div className="flex items-center mb-10">
                                 <span className="bg-indigo-100 text-indigo-600 rounded-full p-3 mr-4">
                                     <Send className="w-6 h-6" />
@@ -138,8 +139,9 @@ export default function ContactSection() {
                                 <input
                                     type="text"
                                     id="name"
+                                    name="name"
                                     required
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-800"
                                     placeholder="Jean Dupont"
                                 />
                             </div>
@@ -150,8 +152,9 @@ export default function ContactSection() {
                                 <input
                                     type="email"
                                     id="email"
+                                    name="email"
                                     required
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-800"
                                     placeholder="jean@exemple.com"
                                 />
                             </div>
@@ -162,8 +165,9 @@ export default function ContactSection() {
                                 <input
                                     type="text"
                                     id="subject"
+                                    name="subject"
                                     required
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-800"
                                     placeholder="À propos de votre projet"
                                 />
                             </div>
@@ -173,9 +177,10 @@ export default function ContactSection() {
                                 </label>
                                 <textarea
                                     id="message"
+                                    name="message"
                                     rows={5}
                                     required
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300"
+                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300 text-gray-800"
                                     placeholder="Décrivez votre projet, vos besoins, votre vision…"
                                 />
                             </div>
@@ -193,10 +198,9 @@ export default function ContactSection() {
                             <button
                                 type="submit"
                                 className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 rounded-lg transition-all shadow-lg text-lg flex items-center justify-center gap-2"
-                                disabled={sent}
                             >
                                 <Send className="w-5 h-5" />
-                                {sent ? "Message envoyé !" : "Envoyer le message"}
+                                Envoyer le message
                             </button>
                             <div className="mt-8 text-center">
                                 <p className="text-gray-500 flex items-center justify-center gap-2">
@@ -204,11 +208,6 @@ export default function ContactSection() {
                                     Réponse garantie sous 24h
                                 </p>
                             </div>
-                            {sent && (
-                                <div className="mt-4 bg-green-50 text-green-700 p-3 rounded-lg text-center font-semibold shadow-inner border border-green-200 animate-pulse">
-                                    Merci pour votre message ! Je vous répondrai rapidement.
-                                </div>
-                            )}
                         </form>
                     </div>
                 </div>
