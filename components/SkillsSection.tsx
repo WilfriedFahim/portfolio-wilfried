@@ -20,14 +20,15 @@ const slugs: Record<string, string> = {
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Mes Compétences
           </h2>
-          <div className="w-20 h-1 bg-blue-500 mx-auto mb-6" />
+          {/* Trait bleu sous le titre */}
+          <div className="w-20 h-1 bg-blue-500 mx-auto mb-6 rounded" />
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Un éventail de technologies que je maîtrise pour construire des expériences web exceptionnelles.
           </p>
@@ -41,7 +42,7 @@ export default function SkillsSection() {
             const slug = slugs[group];
 
             return (
-              <Card key={group} className="flex flex-col h-full">
+              <Card key={group} className="flex flex-col h-full bg-white rounded-xl shadow-sm p-6">
                 <GroupHeader title={group} />
                 <ul className="space-y-3 flex-1">
                   {preview.map((skill) => (

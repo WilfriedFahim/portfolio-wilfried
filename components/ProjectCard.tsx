@@ -69,7 +69,6 @@ export function ProjectCard({
 					))}
 				</div>
 			)}
-
 			{/* Image projet */}
 			{logo && (
 				<div className="w-full h-[260px] overflow-hidden rounded-t-2xl relative">
@@ -85,7 +84,6 @@ export function ProjectCard({
 					<div className="absolute -top-12 -left-12 w-[300px] h-[300px] rounded-full bg-indigo-300 opacity-0 group-hover:opacity-20 blur-2xl transition-all duration-700"></div>
 				</div>
 			)}
-
 			{/* Contenu */}
 			<div className="p-6 flex flex-col flex-1 bg-gray-100">
 				{/* Badges stack */}

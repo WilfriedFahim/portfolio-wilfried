@@ -66,15 +66,16 @@ export default function SkillsPage() {
   return (
     <>
       <ParticlesBackground />
-      <main className="pt-24 pb-16 bg-primary-dark min-h-screen relative z-10 text-white">
+      <main className="pt-16 pb-16 bg-primary-dark min-h-screen relative z-10 text-white">
         {/* Header */}
-        <header className="text-center mt-16">
+        <header className="text-center mt-6 mb-16">
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
               Mes Compétences
             </span>
           </h1>
-          <p className="text-gray-300 max-w-2xl mx-auto">
+          <div className="w-20 h-1 bg-blue-500 mx-auto mb-8 rounded"></div>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Découvrez mon expertise technique et humaine<br />
             à travers ces différents domaines
           </p>
@@ -82,7 +83,10 @@ export default function SkillsPage() {
 
         {/* Sections */}
         {sections.map(
-          ({ key, title, Icon, iconColor, frontBg, backBg, decor1, decor2 }) => {
+          (
+            { key, title, Icon, iconColor, frontBg, backBg, decor1, decor2 },
+            idx
+          ) => {
             const items = skillsMock.filter((s) => {
               if (key === "tools") return s.group === "Design & Outils";
               if (key === "soft-skills") return s.group === "Soft Skills";
@@ -94,10 +98,12 @@ export default function SkillsPage() {
               <section
                 key={key}
                 id={key}
-                className="py-16 relative overflow-hidden"
+                // padding haut/bas identique et cohérent pour chaque section :
+                className={`py-14 relative overflow-hidden ${idx === 0 ? "mt-0" : "mt-0"
+                  }`}
               >
                 <div className="container mx-auto px-4 max-w-6xl">
-                  <div className="text-center mb-16 flex items-center justify-center gap-3">
+                  <div className="text-center mb-8 flex items-center justify-center gap-3">
                     <Icon className={`text-4xl ${iconColor}`} />
                     <h2 className="section-title text-3xl font-bold text-white">
                       {title}

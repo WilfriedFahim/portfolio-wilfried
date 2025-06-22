@@ -1,7 +1,7 @@
 // app/projects/page.tsx
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { ProjectCard } from "@/components/ProjectCard";
 import { projectCardsMock } from "@/mock/index";
 import Container from "@/components/Container";
@@ -12,7 +12,6 @@ export default function Projects() {
 	// PAGINATION
 	const projectsPerPage = 6;
 	const [page, setPage] = useState(1);
-	const isFirstRender = useRef(true);
 
 	const allProjects = [...projectCardsMock].sort(
 		(a, b) => b.lastUpdate.getTime() - a.lastUpdate.getTime()
@@ -25,35 +24,40 @@ export default function Projects() {
 	);
 
 	// Scroll to top de la section au changement de page, skip initial mount
+	const [hasPaginated, setHasPaginated] = useState(false);
+
 	useEffect(() => {
-		if (isFirstRender.current) {
-			isFirstRender.current = false;
+		if (!hasPaginated) {
+			setHasPaginated(true);
 			return;
 		}
 		const section = document.getElementById("project-list-section");
-		const y = section
-			? section.getBoundingClientRect().top + window.pageYOffset - 24
-			: 0;
-		window.scrollTo({ top: y, behavior: "smooth" });
+		if (section) {
+			const y = section.getBoundingClientRect().top + window.pageYOffset - 24;
+			window.scrollTo({ top: y, behavior: "smooth" });
+		}
 	}, [page]);
+
 
 	return (
 		<>
 			<ParticlesBackground />
-			<main className="pt-24 pb-16 bg-primary-dark min-h-screen relative z-10 text-white">
+			<main className="pt-16 pb-16 bg-primary-dark min-h-screen relative z-10 text-white">
 				<Container className="py-0" id="project-list-section">
 					{/* HEADER */}
-					<section className="pb-15 mt-16 px-4 text-center">
+					<section className="pb-10 mt-6 px-4 text-center">
 						<div className="max-w-4xl mx-auto">
 							<h2 className="text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
 								<span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
 									Bienvenue dans mon monde
 								</span>
 							</h2>
+							{/* Trait sous le titre */}
+							<div className="w-20 h-1 bg-blue-500 mx-auto mb-6 rounded"></div>
 							<p className="text-xl bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-4">
 								Des projets qui allient technique et créativité
 							</p>
-							<p className="text-gray-300 max-w-2xl mx-auto">
+							<p className="text-gray-300 max-w-2xl mx-auto mb-4">
 								Chaque réalisation présentée ici, qu&rsquo;il s&rsquo;agisse d&rsquo;un <span className="font-medium">clone</span> de plateforme, d&rsquo;un <span className="font-medium">SaaS</span> ou d&rsquo;une <span className="font-medium">application mobile</span>, incarne mon exigence, ma curiosité et mon envie de donner vie à des idées ambitieuses.
 							</p>
 						</div>

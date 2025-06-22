@@ -39,10 +39,9 @@ export function TimelineWithRecs() {
       {/* Timeline */}
       <div className="md:w-1/2 mb-8 md:mb-0">
         <div className="bg-white p-8 rounded-xl shadow-md">
-          <h2 className="text-3xl font-bold text-gray-800 mb-6">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
             À propos de moi
           </h2>
-          <div className="w-20 h-1 bg-blue-500 mb-6" />
           <p className="text-lg text-gray-600 mb-6">
             Passionné par le développement web depuis mon plus jeune âge, j&rsquo;ai transformé ma curiosité en expertise. Mon esprit « builder » me pousse à constamment créer, améliorer et innover.
           </p>
@@ -67,9 +66,9 @@ export function TimelineWithRecs() {
       {/* Recommandations */}
       <div className="md:w-1/2">
         <div className="bg-white p-8 rounded-xl shadow-md flex flex-col h-full relative">
-          <h3 className="text-xl font-bold text-gray-800 mb-6">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6  text-center">
             Recommandations
-          </h3>
+          </h2>
 
           <ul className="space-y-4 overflow-y-auto pr-2 max-h-[390px] scroll-smooth">
             {recommandations.map((rec, idx) => (

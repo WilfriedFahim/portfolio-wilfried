@@ -60,7 +60,7 @@ export default function Home() {
 			<ProjectList />
 			<SkillsSection />
 			<AboutPreview />
-			<div className="w-full px-4" id="contact">
+			<div className="w-full" id="contact">
 				<ContactSection />
 			</div>
 			<BackToTopButton />

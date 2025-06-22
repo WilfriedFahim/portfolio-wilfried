@@ -45,7 +45,7 @@ export default function Navbar() {
 							</Link>
 						))}
 						<Link
-							href="#contact"
+							href="/#contact"
 							className="rounded-xl bg-blue-500 text-white px-4 py-2 transition-colors duration-200 hover:bg-blue-500"
 						>
 							Contactez-moi
@@ -101,7 +101,7 @@ export default function Navbar() {
 						</Link>
 					))}
 					<Link
-						href="#/ContactSection"
+						href="/#contact"
 						onClick={handleNavLinkClick}
 						className="block px-3 py-2 rounded-md text-base font-bold text-white bg-blue-500 hover:bg-blue-500"
 					>
