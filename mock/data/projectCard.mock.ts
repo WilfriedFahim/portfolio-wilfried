@@ -19,7 +19,7 @@ export const projectCardsMock: ProjectCardType[] = [
 		badge: ["Production"],
 		lastUpdate: new Date("2025-06-21"),
 		stats: [
-			{ label: "COMMITS", value: "54" },
+			{ label: "COMMITS", value: "59" },
 			{ label: "TESTS", value: "." },
 			{ label: "VERSIONS", value: "v1.0" },
 		],
@@ -37,10 +37,10 @@ export const projectCardsMock: ProjectCardType[] = [
 			"Python",
 			"FASTAPI",
 		],
-		liveUrl: "https://edgemind.app/", // à ajuster si tu as une vraie URL live
+		liveUrl: "", // à ajuster si tu as une vraie URL live
 		githubUrl: "", // privé ou en cours : laisse vide pour test bouton désactivé
 		logo: "/images/prochainement.jpg", // change le nom/image si besoin
-		badge: ["En Construction"],
+		badge: ["Prochainement"],
 		lastUpdate: new Date("2025-06-22"),
 		stats: [
 			{ label: "UTILISATEURS", value: "." },
@@ -57,7 +57,7 @@ export const projectCardsMock: ProjectCardType[] = [
 		githubUrl: "",
 		logo: "/images/en_construction.jpg",
 		badge: ["En Construction"],
-		lastUpdate: new Date("2025-06-22"),
+		lastUpdate: new Date("2025-06-23"),
 		stats: [
 			{ label: "UTILISATEURS", value: "." },
 			{ label: "COMMITS", value: "." },
