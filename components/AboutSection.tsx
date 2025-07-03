@@ -26,7 +26,7 @@ const AboutSection = () => {
                         </p>
                     </div>
                     <a
-                        href="/Wilfried_Chi_CV.pdf"
+                        href="/Wilfried_KOUASSI_CV.pdf"
                         download
                         className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition duration-300"
                     >
