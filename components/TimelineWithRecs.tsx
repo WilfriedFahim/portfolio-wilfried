@@ -60,8 +60,8 @@ export function TimelineWithRecs() {
           </div>
 
           <a
-            href="/Wilfried_KOUASSI_CV.pdf"
-            download="Wilfried_KOUASSI_CV.pdf"
+            href="/Wilfried_KOUASSI_CV_FR.pdf"
+            download="Wilfried_KOUASSI_CV_FR.pdf"
             className="w-full inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:from-blue-600 hover:to-indigo-600 transition text-lg mt-4"
           >
             <FaDownload className="mr-2" />
